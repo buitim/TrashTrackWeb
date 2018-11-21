@@ -4,6 +4,8 @@
 
 Design literally ripped from AniList...
 
+[**Final Project Submission Requirements**](https://oregonstate.instructure.com/courses/1692909/assignments/7343835)
+
 **Table of Contents**
 
 - [Mock](#mock)
