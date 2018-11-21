@@ -41,10 +41,12 @@ var port = process.env.PORT || 8080;
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
+// Checks the views folder for "index.ejs" and renders it whenever root page is called
 app.get('/', function (req, res) {
 	res.render('index');
 });
 
+// Checks the views folder for "app.ejs" and renders it whenever /app is called
 app.get('/app', function (req, res) {
 	res.render('app');
 });
