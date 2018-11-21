@@ -8,9 +8,16 @@ Design literally ripped from AniList...
 
 **Table of Contents**
 
+- [Build](#build)
 - [Mock](#mock)
 - [Resources](#resources)
 - [Third-Party Libraries/APIs](#third-party-librariesapis)
+
+# Build
+
+1. Install Node.JS
+2. Run `npm install`
+3. Profit
 
 # Mock
 
