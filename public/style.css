@@ -4,4 +4,14 @@ font-family: 'IBM Plex Sans', sans-serif; */
 h1 {
 	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
+	font-size: 50px;
+}
+
+h2 {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 20px;
+}
+
+p {
+	font-family: 'IBM Plex Sans', sans-serif;
 }
