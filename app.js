@@ -12,14 +12,16 @@ var db = new Client({
   ssl: true,
 });
 
-client.connect();
+db.connect();
 
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (error, result) => {
+db.query('SELECT table_schema,table_name FROM information_schema.tables;', (error, result) => {
+	
   if (error) throw error;
-  for (let row of result.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
+  
+  for (let row of result.rows) { console.log(JSON.stringify(row)); }
+  
+  db.end();
+  
 });
 
 
