@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/buitim/TrashTrackWeb/issues"
   },
-  "homepage": "https://github.com/buitim/TrashTrackWeb#readme"
+  "homepage": "https://github.com/buitim/TrashTrackWeb#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
