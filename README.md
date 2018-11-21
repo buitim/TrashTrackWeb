@@ -1,6 +1,6 @@
 ![banner](assets/Banner/Banner.png)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/buitim/trashtrackweb/badge)](https://www.codefactor.io/repository/github/buitim/trashtrackweb) [![codebeat badge](https://codebeat.co/badges/776e890e-46af-4a54-a5ef-e7b8784ef187)](https://codebeat.co/projects/github-com-buitim-trashtrackweb-master) [![Waffle.io - Columns and their card count](https://badge.waffle.io/buitim/TrashTrackWeb.svg?columns=all)](https://waffle.io/buitim/TrashTrackWeb)
+[![CodeFactor](https://www.codefactor.io/repository/github/buitim/trashtrackweb/badge)](https://www.codefactor.io/repository/github/buitim/trashtrackweb) [![codebeat badge](https://codebeat.co/badges/776e890e-46af-4a54-a5ef-e7b8784ef187)](https://codebeat.co/projects/github-com-buitim-trashtrackweb-master) [![Waffle.io - Columns and their card count](https://badge.waffle.io/buitim/TrashTrackWeb.svg?columns=all)](https://waffle.io/buitim/TrashTrackWeb) [![Heroku](https://heroku-badge.herokuapp.com/?app=anitrashtrack&style=flat)](https://anitrashtrack.herokuapp.com/)
 
 Design literally ripped from AniList...
 
