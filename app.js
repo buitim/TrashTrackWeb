@@ -8,8 +8,10 @@ var app = express();
 const { Client } = require('pg');
 
 var db = new Client({
+	
   connectionString: process.env.DATABASE_URL,
   ssl: true,
+  
 });
 
 db.connect();
