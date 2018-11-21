@@ -1,14 +1,14 @@
 /* font-family: 'Work Sans', sans-serif;
 font-family: 'IBM Plex Sans', sans-serif; */
 
-body{
-	background-color: #9FA4A0;
+body {
+	background-color: #272c38;
 }
 
 h1 {
 	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
-  font-size: 50px;
+	font-size: 50px;
 }
 
 h2 {
@@ -34,15 +34,15 @@ p {
 
 }
 
-#search{
+#search {
 
 	position: absolute;
 	display: block;
 	width: 126px;
-	height:180px;
+	height: 180px;
 	background-color: #F7E96D;
 
-	top:0;
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -50,25 +50,24 @@ p {
 	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
 
-#text{
+#text {
 	display: inline-block;
 	position: absolute;
 	width: 100px;
-	height:100px;
-	top:0;
+	height: 100px;
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
 }
 
-#browse{
+#browse {
 	text-align: center;
 	position: relative;
-	top:40px;
-	left:10px;
+	top: 40px;
+	left: 10px;
 	font-family: 'IBM Plex Sans', sans-serif;
 	color: #0B0B0B;
-	
-}
 
+}
