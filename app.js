@@ -8,25 +8,29 @@ app.use(express.static('public'));
 
 // connect to heroku postgres database using example code from heroku
 
-const { Client } = require('pg');
+const {
+	Client
+} = require('pg');
 
 var db = new Client({
-	
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-  
+
+	connectionString: process.env.DATABASE_URL,
+	ssl: true,
+
 });
 
 db.connect();
 
 db.query('SELECT table_schema,table_name FROM information_schema.tables;', (error, result) => {
-	
-  if (error) throw error;
-  
-  for (let row of result.rows) { console.log(JSON.stringify(row)); }
-  
-  db.end();
-  
+
+	if (error) throw error;
+
+	for (let row of result.rows) {
+		console.log(JSON.stringify(row));
+	}
+
+	db.end();
+
 });
 
 
@@ -37,8 +41,14 @@ var port = process.env.PORT || 8080;
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
-app.get('/app', function (req, res) {
+// Checks the views folder for "index.ejs" and renders it whenever root page is called
+app.get('/', function (req, res) {
 	res.render('index');
+});
+
+// Checks the views folder for "app.ejs" and renders it whenever /app is called
+app.get('/app', function (req, res) {
+	res.render('app');
 });
 
 var server = app.listen(port, function () {
