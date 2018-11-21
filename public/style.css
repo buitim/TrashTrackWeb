@@ -1,6 +1,10 @@
 /* font-family: 'Work Sans', sans-serif;
 font-family: 'IBM Plex Sans', sans-serif; */
 
+body{
+	background-color: #9FA4A0;
+}
+
 h1 {
 	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
@@ -15,7 +19,8 @@ h2 {
 .nav {
 
 	top: 10px;
-	right: 20px;
+	right: 50px;
+	position: absolute;
 
 }
 
@@ -25,5 +30,45 @@ p {
 
 #home {
 	font-size: 30px;
+	color: #E4AD59;
+
+}
+
+#search{
+
+	position: absolute;
+	display: block;
+	width: 126px;
+	height:180px;
+	background-color: #F7E96D;
+
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+#text{
+	display: inline-block;
+	position: absolute;
+	width: 100px;
+	height:100px;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#browse{
+	text-align: center;
+	position: relative;
+	top:40px;
+	left:10px;
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: #0B0B0B;
 	
 }
+
