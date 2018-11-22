@@ -1,0 +1,548 @@
+{
+	"data": {
+		"Page": {
+			"media": [{
+					"id": 100745,
+					"title": {
+						"romaji": "Captain Tsubasa (2018)",
+						"english": "Captain Tsubasa (2018)",
+						"native": "キャプテン翼"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 287,
+							"name": "David Production"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 5906,
+									"name": {
+										"first": "Tarou",
+										"last": "Misaki"
+									}
+								},
+								"voiceActors": [{
+									"id": 117223,
+									"name": {
+										"first": "Ayaka",
+										"last": "Fukuhara"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 6780,
+									"name": {
+										"first": "Kojirou",
+										"last": "Hyuuga"
+									}
+								},
+								"voiceActors": [{
+									"id": 104580,
+									"name": {
+										"first": "Takuya",
+										"last": "Satou"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 46468,
+									"name": {
+										"first": "Ryo",
+										"last": "Ishizaki"
+									}
+								},
+								"voiceActors": [{
+									"id": 105013,
+									"name": {
+										"first": "Mutsumi",
+										"last": "Tamura"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 15027,
+									"name": {
+										"first": "Genzou",
+										"last": "Wakabayashi"
+									}
+								},
+								"voiceActors": [{
+									"id": 95005,
+									"name": {
+										"first": "Kenichi",
+										"last": "Suzumura"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 5620,
+									"name": {
+										"first": "Tsubasa",
+										"last": "Oozora"
+									}
+								},
+								"voiceActors": [{
+									"id": 95407,
+									"name": {
+										"first": "Yuuko",
+										"last": "Sanpei"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 6781,
+									"name": {
+										"first": "Jun",
+										"last": "Misugi"
+									}
+								},
+								"voiceActors": [{
+									"id": 113227,
+									"name": {
+										"first": "Souma",
+										"last": "Saitou"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 20357,
+									"name": {
+										"first": "Roberto",
+										"last": "Hongou"
+									}
+								},
+								"voiceActors": [{
+									"id": 95020,
+									"name": {
+										"first": "Katsuyuki",
+										"last": "Konishi"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 100978,
+					"title": {
+						"romaji": "Gegege no Kitarou (2018)",
+						"english": "GeGeGe no Kitaro",
+						"native": "ゲゲゲの鬼太郎(2018)"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 18,
+							"name": "Toei Animation"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 7812,
+									"name": {
+										"first": "Kitaro",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95099,
+									"name": {
+										"first": "Miyuki",
+										"last": "Sawashiro"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 7813,
+									"name": {
+										"first": "Medama Oyaji",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95557,
+									"name": {
+										"first": "Masako",
+										"last": "Nozawa"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127480,
+									"name": {
+										"first": "Mana",
+										"last": "Inuyama"
+									}
+								},
+								"voiceActors": [{
+									"id": 106162,
+									"name": {
+										"first": "Yukiyo",
+										"last": "Fujii"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 28196,
+									"name": {
+										"first": "Nurikabe",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95651,
+									"name": {
+										"first": "Bin",
+										"last": "Shimada"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 7814,
+									"name": {
+										"first": "Neko Musume",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 102262,
+									"name": {
+										"first": "Umeka",
+										"last": "Shouji"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 8609,
+									"name": {
+										"first": "Nezumi Otoko",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95673,
+									"name": {
+										"first": "Toshio",
+										"last": "Furukawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 28146,
+									"name": {
+										"first": "Konaki",
+										"last": "Jijii"
+									}
+								},
+								"voiceActors": [{
+									"id": 95651,
+									"name": {
+										"first": "Bin",
+										"last": "Shimada"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 28151,
+									"name": {
+										"first": "Ittan",
+										"last": "Momen"
+									}
+								},
+								"voiceActors": [{
+									"id": 95067,
+									"name": {
+										"first": "Kappei",
+										"last": "Yamaguchi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 28154,
+									"name": {
+										"first": "Sunakake",
+										"last": "Babaa"
+									}
+								},
+								"voiceActors": [{
+									"id": 95075,
+									"name": {
+										"first": "Mayumi",
+										"last": "Tanaka"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 100785,
+					"title": {
+						"romaji": "Layton Mystery Tanteisha: Katori no Nazotoki File",
+						"english": "Layton Mystery Detective Agency: Kat's Mystery-Solving Files",
+						"native": "レイトンミステリー探偵社：カトリーのナゾトキファイル"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 839,
+							"name": "LIDENFILMS"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 124513,
+									"name": {
+										"first": "Katrielle",
+										"last": "Layton"
+									}
+								},
+								"voiceActors": [{
+									"id": 95185,
+									"name": {
+										"first": "Kana",
+										"last": "Hanazawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127537,
+									"name": {
+										"first": "Montoir",
+										"last": "Noah"
+									}
+								},
+								"voiceActors": [{
+									"id": 107389,
+									"name": {
+										"first": "Kyousuke",
+										"last": "Ikeda"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 23258,
+									"name": {
+										"first": "Hershel",
+										"last": "Layton"
+									}
+								},
+								"voiceActors": [{
+									"id": 95011,
+									"name": {
+										"first": "Kouichi",
+										"last": "Yamadera"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 101043,
+					"title": {
+						"romaji": "Aikatsu Friends!",
+						"english": "Aikatsu Friends!",
+						"native": "アイカツフレンズ!"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 6116,
+							"name": "Bandai Namco Pictures"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 125954,
+									"name": {
+										"first": "Mirai",
+										"last": "Asuka"
+									}
+								},
+								"voiceActors": [{
+									"id": 110903,
+									"name": {
+										"first": "Ayaka",
+										"last": "Ohashi"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125955,
+									"name": {
+										"first": "Karen",
+										"last": "Kamishiro"
+									}
+								},
+								"voiceActors": [{
+									"id": 112297,
+									"name": {
+										"first": "Azusa",
+										"last": "Tadokoro"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125938,
+									"name": {
+										"first": "Aine",
+										"last": "Yuuki"
+									}
+								},
+								"voiceActors": [{
+									"id": 125939,
+									"name": {
+										"first": "Akane",
+										"last": "Matsunaga"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125940,
+									"name": {
+										"first": "Mio",
+										"last": "Minato"
+									}
+								},
+								"voiceActors": [{
+									"id": 112091,
+									"name": {
+										"first": "Ibuki",
+										"last": "Kido"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127721,
+									"name": {
+										"first": "Kaguya",
+										"last": "Shirayuri"
+									}
+								},
+								"voiceActors": [{
+									"id": 118399,
+									"name": {
+										"first": "Yuuki",
+										"last": "Kuwahara"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127722,
+									"name": {
+										"first": "Sakuya",
+										"last": "Shirayuri"
+									}
+								},
+								"voiceActors": [{
+									"id": 127723,
+									"name": {
+										"first": "Emiri",
+										"last": "Suyama"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 125941,
+									"name": {
+										"first": "Maika",
+										"last": "Chouno"
+									}
+								},
+								"voiceActors": [{
+									"id": 111197,
+									"name": {
+										"first": "Karen",
+										"last": "Miyama"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 125942,
+									"name": {
+										"first": "Ema",
+										"last": "Hinata"
+									}
+								},
+								"voiceActors": [{
+									"id": 125943,
+									"name": {
+										"first": "Yui",
+										"last": "Ninomiya"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 99478,
+					"title": {
+						"romaji": "Koneko no Chii: Ponponra Daibouken 2",
+						"english": null,
+						"native": "こねこのチー ポンポンらー大冒険 2"
+					},
+					"studios": {
+						"nodes": []
+					},
+					"characters": {
+						"edges": []
+					}
+				}
+			]
+		}
+	}
+}

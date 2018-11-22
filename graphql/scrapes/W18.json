@@ -1,0 +1,815 @@
+{
+	"data": {
+		"Page": {
+			"media": [{
+					"id": 100855,
+					"title": {
+						"romaji": "Emiya-san Chi no Kyou no Gohan",
+						"english": "Today's Menu for Emiya Family",
+						"native": "衛宮さんちの今日のごはん"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 43,
+							"name": "ufotable"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 496,
+									"name": {
+										"first": "Shirou",
+										"last": "Emiya"
+									}
+								},
+								"voiceActors": [{
+									"id": 95016,
+									"name": {
+										"first": "Noriaki",
+										"last": "Sugiyama"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 497,
+									"name": {
+										"first": "Saber",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95013,
+									"name": {
+										"first": "Ayako",
+										"last": "Kawasumi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 498,
+									"name": {
+										"first": "Rin",
+										"last": "Tousaka"
+									}
+								},
+								"voiceActors": [{
+									"id": 95116,
+									"name": {
+										"first": "Kana",
+										"last": "Ueda"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 499,
+									"name": {
+										"first": "Lancer",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95096,
+									"name": {
+										"first": "Nobutoshi",
+										"last": "Canna"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 500,
+									"name": {
+										"first": "Sakura",
+										"last": "Matou"
+									}
+								},
+								"voiceActors": [{
+									"id": 95120,
+									"name": {
+										"first": "Noriko",
+										"last": "Shitaya"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 502,
+									"name": {
+										"first": "Rider",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95119,
+									"name": {
+										"first": "Yuu",
+										"last": "Asakawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 503,
+									"name": {
+										"first": "Illyasviel",
+										"last": "von Einzbern"
+									}
+								},
+								"voiceActors": [{
+									"id": 95117,
+									"name": {
+										"first": "Mai",
+										"last": "Kadowaki"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 505,
+									"name": {
+										"first": "Taiga",
+										"last": "Fujimura"
+									}
+								},
+								"voiceActors": [{
+									"id": 95121,
+									"name": {
+										"first": "Miki",
+										"last": "Itou"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 99720,
+					"title": {
+						"romaji": "Märchen Mädchen",
+						"english": "Maerchen Maedchen",
+						"native": "メルヘン・メドヘン"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 346,
+							"name": "Hoods Entertainment"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 124928,
+									"name": {
+										"first": "Shizuka",
+										"last": "Tsuchimikado"
+									}
+								},
+								"voiceActors": [{
+									"id": 118402,
+									"name": {
+										"first": "Rie",
+										"last": "Suegara"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 124922,
+									"name": {
+										"first": "Hazuki",
+										"last": "Kagimura"
+									}
+								},
+								"voiceActors": [{
+									"id": 124923,
+									"name": {
+										"first": "Tomori",
+										"last": "Kusunoki"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 124927,
+									"name": {
+										"first": "Yumilia",
+										"last": "Qazan"
+									}
+								},
+								"voiceActors": [{
+									"id": 118806,
+									"name": {
+										"first": "Lynn",
+										"last": ""
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124929,
+									"name": {
+										"first": "Arthur",
+										"last": "Pendragon"
+									}
+								},
+								"voiceActors": [{
+									"id": 118602,
+									"name": {
+										"first": "Reina\r\n",
+										"last": "Ueda"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124930,
+									"name": {
+										"first": "Agathe",
+										"last": "Arier"
+									}
+								},
+								"voiceActors": [{
+									"id": 113511,
+									"name": {
+										"first": "Ai",
+										"last": "Kakuma"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124931,
+									"name": {
+										"first": "Lynne",
+										"last": "Daves"
+									}
+								},
+								"voiceActors": [{
+									"id": 100250,
+									"name": {
+										"first": "Rina",
+										"last": "Hidaka"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124932,
+									"name": {
+										"first": "Mahakali",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 121941,
+									"name": {
+										"first": "Yuna",
+										"last": "Kamakura"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124933,
+									"name": {
+										"first": "Xuemei",
+										"last": "Li"
+									}
+								},
+								"voiceActors": [{
+									"id": 113445,
+									"name": {
+										"first": "Maya",
+										"last": "Yoshioka"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124934,
+									"name": {
+										"first": "Maria",
+										"last": "Rasputin"
+									}
+								},
+								"voiceActors": [{
+									"id": 119863,
+									"name": {
+										"first": "Airi",
+										"last": "Ootsu"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124935,
+									"name": {
+										"first": "Ariko",
+										"last": "Kasumi"
+									}
+								},
+								"voiceActors": [{
+									"id": 119416,
+									"name": {
+										"first": "Kaede",
+										"last": "Hondo"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 100661,
+					"title": {
+						"romaji": "Hugtto! Precure",
+						"english": "Hugtto! Precure",
+						"native": "HuGっと！プリキュア"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 18,
+							"name": "Toei Animation"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 125961,
+									"name": {
+										"first": "Hariham",
+										"last": "Hari"
+									}
+								},
+								"voiceActors": [{
+									"id": 95277,
+									"name": {
+										"first": "Junko",
+										"last": "Noda"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 126225,
+									"name": {
+										"first": "Emiru",
+										"last": "Aisaki"
+									}
+								},
+								"voiceActors": [{
+									"id": 116243,
+									"name": {
+										"first": "Nao",
+										"last": "Tamura"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125496,
+									"name": {
+										"first": "Homare",
+										"last": "Kagayaki"
+									}
+								},
+								"voiceActors": [{
+									"id": 105981,
+									"name": {
+										"first": "Yui",
+										"last": "Ogura"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125497,
+									"name": {
+										"first": "Hana",
+										"last": "Nono"
+									}
+								},
+								"voiceActors": [{
+									"id": 124802,
+									"name": {
+										"first": "Rie",
+										"last": "Hikisaka"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125498,
+									"name": {
+										"first": "Saaya",
+										"last": "Yakushiji"
+									}
+								},
+								"voiceActors": [{
+									"id": 125577,
+									"name": {
+										"first": "Rina",
+										"last": "Hon'izumi"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125499,
+									"name": {
+										"first": "Hug-tan",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 113451,
+									"name": {
+										"first": "Konomi",
+										"last": "Tada"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125822,
+									"name": {
+										"first": "Ruru",
+										"last": "Amour"
+									}
+								},
+								"voiceActors": [{
+									"id": 95027,
+									"name": {
+										"first": "Yukari",
+										"last": "Tamura"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 5449,
+									"name": {
+										"first": "Nagisa",
+										"last": "Misumi"
+									}
+								},
+								"voiceActors": [{
+									"id": 95769,
+									"name": {
+										"first": "Youko",
+										"last": "Honna"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 5454,
+									"name": {
+										"first": "Honoka",
+										"last": "Yukishiro"
+									}
+								},
+								"voiceActors": [{
+									"id": 95140,
+									"name": {
+										"first": "",
+										"last": "Yukana"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 129196,
+									"name": {
+										"first": "Henri",
+										"last": "Wakamiya"
+									}
+								},
+								"voiceActors": [{
+									"id": 120209,
+									"name": {
+										"first": "Toshiyuki",
+										"last": "Someya"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 129197,
+									"name": {
+										"first": "George",
+										"last": "Kurai"
+									}
+								},
+								"voiceActors": [{
+									"id": 105694,
+									"name": {
+										"first": "Junpei",
+										"last": "Morita"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 129198,
+									"name": {
+										"first": "Doctor",
+										"last": "Traum"
+									}
+								},
+								"voiceActors": [{
+									"id": 100427,
+									"name": {
+										"first": "Takaya",
+										"last": "Hashi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127941,
+									"name": {
+										"first": "Bishin",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95124,
+									"name": {
+										"first": "Satomi",
+										"last": "Arai"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127942,
+									"name": {
+										"first": "Geros",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95428,
+									"name": {
+										"first": "Yuko",
+										"last": "Kaida"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127943,
+									"name": {
+										"first": "Papple",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95092,
+									"name": {
+										"first": "Sayaka",
+										"last": "Oohara"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127944,
+									"name": {
+										"first": "Charaleet",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 119506,
+									"name": {
+										"first": "Fukushi",
+										"last": "Ochiai"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 100486,
+					"title": {
+						"romaji": "Youkoso! Sukebe Elf no Mori e",
+						"english": null,
+						"native": "ようこそ！ スケベエルフの森へ"
+					},
+					"studios": {
+						"nodes": [{
+								"id": 6128,
+								"name": "Bunny Walker"
+							},
+							{
+								"id": 405,
+								"name": "T-Rex"
+							},
+							{
+								"id": 823,
+								"name": "Lune Pictures"
+							}
+						]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 125507,
+									"name": {
+										"first": "Yuuichi",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 125506,
+									"name": {
+										"first": "",
+										"last": "夢野一吾"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125508,
+									"name": {
+										"first": "Lucie",
+										"last": "Menelumia"
+									}
+								},
+								"voiceActors": [{
+									"id": 105348,
+									"name": {
+										"first": "Sahomi",
+										"last": "Koyama"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125509,
+									"name": {
+										"first": "Nol",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 103914,
+									"name": {
+										"first": "Nozomi",
+										"last": "Yoneshima"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125510,
+									"name": {
+										"first": "Firis",
+										"last": "Hagerhelm"
+									}
+								},
+								"voiceActors": [{
+									"id": 115673,
+									"name": {
+										"first": "Akane",
+										"last": "Sanada"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125511,
+									"name": {
+										"first": "Evelyn",
+										"last": "Celebrían"
+									}
+								},
+								"voiceActors": [{
+									"id": 123916,
+									"name": {
+										"first": "Saki",
+										"last": "Minase"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125512,
+									"name": {
+										"first": "Elda",
+										"last": "Ballad"
+									}
+								},
+								"voiceActors": [{
+									"id": 120207,
+									"name": {
+										"first": "Matsuri",
+										"last": "Mizuguchi"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125513,
+									"name": {
+										"first": "Delva",
+										"last": "Celebrían"
+									}
+								},
+								"voiceActors": [{
+									"id": 109491,
+									"name": {
+										"first": "Alice",
+										"last": "Sakurai"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 125514,
+									"name": {
+										"first": "Misery",
+										"last": "Stentrem"
+									}
+								},
+								"voiceActors": [{
+									"id": 96273,
+									"name": {
+										"first": "Yuu",
+										"last": "Amamiya"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 100620,
+					"title": {
+						"romaji": "Shinkansen Henkei Robo Shinkalion",
+						"english": null,
+						"native": "新幹線変形ロボ シンカリオン"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 28,
+							"name": "Oriental Light and Magic"
+						}]
+					},
+					"characters": {
+						"edges": []
+					}
+				}
+			]
+		}
+	}
+}
