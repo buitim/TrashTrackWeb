@@ -1,0 +1,45 @@
+# These are some queries that I used to pull for data to manually input into our database
+# run query here https://anilist.co/graphiql
+
+{
+	Page(page: 1, perPage: 5) {
+		media(
+			season: FALL
+			seasonYear: 2018
+			sort: POPULARITY_DESC
+			status: RELEASING
+		) {
+			id
+			title {
+				romaji
+				english
+				native
+			}
+			studios {
+				nodes {
+					id
+					name
+				}
+			}
+			characters(sort: ROLE) {
+				edges {
+					role
+					node {
+						id
+						name {
+							first
+							last
+						}
+					}
+					voiceActors(language: JAPANESE) {
+						id
+						name {
+							first
+							last
+						}
+					}
+				}
+			}
+		}
+	}
+}
