@@ -1,0 +1,908 @@
+{
+	"data": {
+		"Page": {
+			"media": [{
+					"id": 101165,
+					"title": {
+						"romaji": "Goblin Slayer",
+						"english": "GOBLIN SLAYER",
+						"native": "ゴブリンスレイヤー"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 314,
+							"name": "White Fox"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 126483,
+									"name": {
+										"first": "Onna Shinkan",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 105981,
+									"name": {
+										"first": "Yui",
+										"last": "Ogura"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 126458,
+									"name": {
+										"first": "Goblin Slayer",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 118908,
+									"name": {
+										"first": "Yuuichirou",
+										"last": "Umehara"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 126484,
+									"name": {
+										"first": "Ushikai Musume",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95885,
+									"name": {
+										"first": "Yuka",
+										"last": "Iguchi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 126485,
+									"name": {
+										"first": "Uketsuke-jou",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 108639,
+									"name": {
+										"first": "Maaya",
+										"last": "Uchida"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 126486,
+									"name": {
+										"first": "Majo",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 102263,
+									"name": {
+										"first": "Youko",
+										"last": "Hikasa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 126487,
+									"name": {
+										"first": "Tokage Souryo",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95002,
+									"name": {
+										"first": "Tomokazu",
+										"last": "Sugita"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 126488,
+									"name": {
+										"first": "Yaritsukai",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 106817,
+									"name": {
+										"first": "Yoshitsugu",
+										"last": "Matsuoka"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 129080,
+									"name": {
+										"first": "Tsurugi no Otome",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95054,
+									"name": {
+										"first": "Aya",
+										"last": "Endou"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 126457,
+									"name": {
+										"first": "Yousei Yunde",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 106184,
+									"name": {
+										"first": "Nao",
+										"last": "Touyama"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128254,
+									"name": {
+										"first": "Kouhito Doushi",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95513,
+									"name": {
+										"first": "Yuuichi",
+										"last": "Nakamura"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 100182,
+					"title": {
+						"romaji": "Sword Art Online: Alicization",
+						"english": null,
+						"native": "ソードアート・オンライン アリシゼーション"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 561,
+							"name": "A-1 Pictures"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 36765,
+									"name": {
+										"first": "Kazuto",
+										"last": "Kirigaya"
+									}
+								},
+								"voiceActors": [{
+									"id": 106817,
+									"name": {
+										"first": "Yoshitsugu",
+										"last": "Matsuoka"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 75450,
+									"name": {
+										"first": "Alice",
+										"last": "Schuberg"
+									}
+								},
+								"voiceActors": [{
+									"id": 105765,
+									"name": {
+										"first": "Ai",
+										"last": "Kayano"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 36828,
+									"name": {
+										"first": "Asuna",
+										"last": "Yuuki"
+									}
+								},
+								"voiceActors": [{
+									"id": 95890,
+									"name": {
+										"first": "Haruka",
+										"last": "Tomatsu"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 70899,
+									"name": {
+										"first": "Eugeo",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 105989,
+									"name": {
+										"first": "Nobunaga",
+										"last": "Shimazaki"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 37681,
+									"name": {
+										"first": "Keiko",
+										"last": "Ayano"
+									}
+								},
+								"voiceActors": [{
+									"id": 100250,
+									"name": {
+										"first": "Rina",
+										"last": "Hidaka"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 54099,
+									"name": {
+										"first": "Andrew Gilbert",
+										"last": "Mills"
+									}
+								},
+								"voiceActors": [{
+									"id": 95025,
+									"name": {
+										"first": "Hiroki",
+										"last": "Yasumoto"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 55147,
+									"name": {
+										"first": "Shino",
+										"last": "Asada"
+									}
+								},
+								"voiceActors": [{
+									"id": 95099,
+									"name": {
+										"first": "Miyuki",
+										"last": "Sawashiro"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 43906,
+									"name": {
+										"first": "Rika",
+										"last": "Shinozaki"
+									}
+								},
+								"voiceActors": [{
+									"id": 95823,
+									"name": {
+										"first": "Ayahi",
+										"last": "Takagaki"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 36830,
+									"name": {
+										"first": "Ryoutarou",
+										"last": "Tsuboi"
+									}
+								},
+								"voiceActors": [{
+									"id": 95125,
+									"name": {
+										"first": "Hiroaki",
+										"last": "Hirata"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 101291,
+					"title": {
+						"romaji": "Seishun Buta Yarou wa Bunny Girl-senpai no Yume wo Minai",
+						"english": "Rascal Does Not Dream of Bunny Girl Senpai",
+						"native": "青春ブタ野郎はバニーガール先輩の夢を見ない"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 6222,
+							"name": "CloverWorks"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 127221,
+									"name": {
+										"first": "Sakuta",
+										"last": "Azusagawa"
+									}
+								},
+								"voiceActors": [{
+									"id": 115156,
+									"name": {
+										"first": "Kaito",
+										"last": "Ishikawa"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127222,
+									"name": {
+										"first": "Mai",
+										"last": "Sakurajima"
+									}
+								},
+								"voiceActors": [{
+									"id": 106787,
+									"name": {
+										"first": "Asami",
+										"last": "Seto"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127840,
+									"name": {
+										"first": "Tomoe",
+										"last": "Koga"
+									}
+								},
+								"voiceActors": [{
+									"id": 106184,
+									"name": {
+										"first": "Nao",
+										"last": "Touyama"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127841,
+									"name": {
+										"first": "Nodoka",
+										"last": "Toyohama"
+									}
+								},
+								"voiceActors": [{
+									"id": 108639,
+									"name": {
+										"first": "Maaya",
+										"last": "Uchida"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127843,
+									"name": {
+										"first": "Shouko",
+										"last": "Makinohara"
+									}
+								},
+								"voiceActors": [{
+									"id": 106297,
+									"name": {
+										"first": "Inori",
+										"last": "Minase"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127613,
+									"name": {
+										"first": "Kaede",
+										"last": "Azusagawa"
+									}
+								},
+								"voiceActors": [{
+									"id": 112209,
+									"name": {
+										"first": "Yurika",
+										"last": "Kubo"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127633,
+									"name": {
+										"first": "Rio",
+										"last": "Futaba"
+									}
+								},
+								"voiceActors": [{
+									"id": 112215,
+									"name": {
+										"first": "Atsumi",
+										"last": "Tanezaki"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 101280,
+					"title": {
+						"romaji": "Tensei Shitara Slime Datta Ken",
+						"english": "That Time I Got Reincarnated as a Slime",
+						"native": "転生したらスライムだった件"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 4418,
+							"name": "8-bit"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 123962,
+									"name": {
+										"first": "Rimuru",
+										"last": "Tempest"
+									}
+								},
+								"voiceActors": [{
+									"id": 127666,
+									"name": {
+										"first": "Miho",
+										"last": "Okasaki"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 129347,
+									"name": {
+										"first": "Great Sage",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95144,
+									"name": {
+										"first": "Megumi",
+										"last": "Toyoguchi"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 129348,
+									"name": {
+										"first": "Rigurdo",
+										"last": ""
+									}
+								},
+								"voiceActors": [{
+									"id": 110543,
+									"name": {
+										"first": "Kanehira",
+										"last": "Yamamoto"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 129349,
+									"name": {
+										"first": "Rigor",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 119200,
+									"name": {
+										"first": "Haruki",
+										"last": "Ishiya"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 129350,
+									"name": {
+										"first": "Gobuta",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 129351,
+									"name": {
+										"first": "Asuna",
+										"last": "Tomari"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128033,
+									"name": {
+										"first": "Shion",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 118510,
+									"name": {
+										"first": "Mao",
+										"last": "Ichimichi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128034,
+									"name": {
+										"first": "Veldora",
+										"last": "Tempest"
+									}
+								},
+								"voiceActors": [{
+									"id": 96489,
+									"name": {
+										"first": "Tomoaki",
+										"last": "Maeno"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128035,
+									"name": {
+										"first": "Ranga",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 124703,
+									"name": {
+										"first": "Chikahiro",
+										"last": "Kobayashi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128036,
+									"name": {
+										"first": "Milim",
+										"last": "Nava"
+									}
+								},
+								"voiceActors": [{
+									"id": 100250,
+									"name": {
+										"first": "Rina",
+										"last": "Hidaka"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128037,
+									"name": {
+										"first": "Shizue",
+										"last": "Izawa"
+									}
+								},
+								"voiceActors": [{
+									"id": 116543,
+									"name": {
+										"first": "Yumiri",
+										"last": "Hanamori"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128038,
+									"name": {
+										"first": "Benimaru",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 112635,
+									"name": {
+										"first": "Makoto",
+										"last": "Furukawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128039,
+									"name": {
+										"first": "Souei",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 102695,
+									"name": {
+										"first": "Takuya",
+										"last": "Eguchi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 128040,
+									"name": {
+										"first": "Shuna",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 119616,
+									"name": {
+										"first": "Sayaka",
+										"last": "Senbongi"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 103871,
+					"title": {
+						"romaji": "Zombie Land Saga",
+						"english": "ZOMBIE LAND SAGA",
+						"native": "ゾンビランドサガ"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 569,
+							"name": "MAPPA"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 127538,
+									"name": {
+										"first": "Saki",
+										"last": "Nikaidou"
+									}
+								},
+								"voiceActors": [{
+									"id": 107666,
+									"name": {
+										"first": "Asami",
+										"last": "Tano"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127539,
+									"name": {
+										"first": "Ai",
+										"last": "Mizuno"
+									}
+								},
+								"voiceActors": [{
+									"id": 111135,
+									"name": {
+										"first": "Risa",
+										"last": "Taneda"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127540,
+									"name": {
+										"first": "Sakura",
+										"last": "Minamoto"
+									}
+								},
+								"voiceActors": [{
+									"id": 119416,
+									"name": {
+										"first": "Kaede",
+										"last": "Hondo"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127541,
+									"name": {
+										"first": "Junko",
+										"last": "Konno"
+									}
+								},
+								"voiceActors": [{
+									"id": 127542,
+									"name": {
+										"first": "Maki",
+										"last": "Kawase"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127543,
+									"name": {
+										"first": "Koutarou",
+										"last": "Tatsumi"
+									}
+								},
+								"voiceActors": [{
+									"id": 95065,
+									"name": {
+										"first": "Mamoru",
+										"last": "Miyano"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127651,
+									"name": {
+										"first": "Yuugiri",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 119821,
+									"name": {
+										"first": "Rika",
+										"last": "Kinugawa"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 127652,
+									"name": {
+										"first": "Lily",
+										"last": "Hoshikawa"
+									}
+								},
+								"voiceActors": [{
+									"id": 118473,
+									"name": {
+										"first": "Minami",
+										"last": "Tanaka"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127649,
+									"name": {
+										"first": "Romero",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95752,
+									"name": {
+										"first": "Yasuhiro",
+										"last": "Takato"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127650,
+									"name": {
+										"first": "Tae",
+										"last": "Yamada"
+									}
+								},
+								"voiceActors": [{
+									"id": 95009,
+									"name": {
+										"first": "Kotono",
+										"last": "Mitsuishi"
+									}
+								}]
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}

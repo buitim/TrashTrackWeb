@@ -1,0 +1,415 @@
+{
+	"data": {
+		"Page": {
+			"media": [{
+					"id": 100388,
+					"title": {
+						"romaji": "BANANA FISH",
+						"english": null,
+						"native": null
+					},
+					"studios": {
+						"nodes": [{
+							"id": 569,
+							"name": "MAPPA"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 13580,
+									"name": {
+										"first": "Ash",
+										"last": "Lynx"
+									}
+								},
+								"voiceActors": [{
+									"id": 119617,
+									"name": {
+										"first": "Yuuma",
+										"last": "Uchida"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 21928,
+									"name": {
+										"first": "Eiji",
+										"last": "Okumura"
+									}
+								},
+								"voiceActors": [{
+									"id": 95074,
+									"name": {
+										"first": "Kenji",
+										"last": "Nojima"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127039,
+									"name": {
+										"first": "Shunichi",
+										"last": "Ibe"
+									}
+								},
+								"voiceActors": [{
+									"id": 95410,
+									"name": {
+										"first": "Shinji",
+										"last": "Kawada"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 127040,
+									"name": {
+										"first": "Skip",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 110919,
+									"name": {
+										"first": "Ayumu",
+										"last": "Murase"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 32597,
+									"name": {
+										"first": "Blanca",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95006,
+									"name": {
+										"first": "Toshiyuki",
+										"last": "Morikawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 29567,
+									"name": {
+										"first": "Sing",
+										"last": "Soo-Ling"
+									}
+								},
+								"voiceActors": [{
+									"id": 119672,
+									"name": {
+										"first": "Shouya",
+										"last": "Chiba"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 29575,
+									"name": {
+										"first": "Max",
+										"last": "Lobo"
+									}
+								},
+								"voiceActors": [{
+									"id": 95125,
+									"name": {
+										"first": "Hiroaki",
+										"last": "Hirata"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 29576,
+									"name": {
+										"first": "Yue-Lung",
+										"last": "Lee"
+									}
+								},
+								"voiceActors": [{
+									"id": 95086,
+									"name": {
+										"first": "Jun",
+										"last": "Fukuyama"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 29577,
+									"name": {
+										"first": "Shorter",
+										"last": "Wong"
+									}
+								},
+								"voiceActors": [{
+									"id": 112635,
+									"name": {
+										"first": "Makoto",
+										"last": "Furukawa"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 101161,
+					"title": {
+						"romaji": "Chuukan Kanriroku Tonegawa",
+						"english": "Mr. Tonegawa -Middle Management Blues-",
+						"native": "中間管理録トネガワ"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 11,
+							"name": "MADHOUSE"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 9129,
+									"name": {
+										"first": "Yukio",
+										"last": "Tonegawa"
+									}
+								},
+								"voiceActors": [{
+									"id": 95006,
+									"name": {
+										"first": "Toshiyuki",
+										"last": "Morikawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 17959,
+									"name": {
+										"first": "Yuuji",
+										"last": "Endou"
+									}
+								},
+								"voiceActors": [{
+									"id": 95591,
+									"name": {
+										"first": "Kenjirou",
+										"last": "Tsuda"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 42135,
+									"name": {
+										"first": "Ootsuki",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95898,
+									"name": {
+										"first": "Cho",
+										"last": null
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 14057,
+									"name": {
+										"first": "Kazutaka",
+										"last": "Hyoudou"
+									}
+								},
+								"voiceActors": [{
+									"id": 96566,
+									"name": {
+										"first": "Masane",
+										"last": "Tsukayama"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 97888,
+					"title": {
+						"romaji": "Baki: New Grappler Baki",
+						"english": "Baki: New Grappler Baki",
+						"native": "バキ―NEW GRAPPLER BAKI"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 73,
+							"name": "TMS Entertainment"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 10498,
+									"name": {
+										"first": "Baki",
+										"last": "Hanma"
+									}
+								},
+								"voiceActors": [{
+									"id": 105989,
+									"name": {
+										"first": "Nobunaga",
+										"last": "Shimazaki"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 10501,
+									"name": {
+										"first": "Kaoru",
+										"last": "Hanayama"
+									}
+								},
+								"voiceActors": [{
+									"id": 102695,
+									"name": {
+										"first": "Takuya",
+										"last": "Eguchi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 22281,
+									"name": {
+										"first": "Kozue",
+										"last": "Matsumoto"
+									}
+								},
+								"voiceActors": [{
+									"id": 116517,
+									"name": {
+										"first": "Sora",
+										"last": "Amamiya"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 80249,
+									"name": {
+										"first": "Retsu",
+										"last": "Kaioh"
+									}
+								},
+								"voiceActors": [{
+									"id": 95113,
+									"name": {
+										"first": "Rikiya",
+										"last": "Koyama"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 101581,
+					"title": {
+						"romaji": "Yuragi-sou no Yuuna-san OVA",
+						"english": "Yuuna and the Haunted Hot Springs OVA",
+						"native": "ゆらぎ荘の幽奈さん OVA"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 27,
+							"name": "Xebec"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 127238,
+									"name": {
+										"first": "Yuuna",
+										"last": "Yunohana"
+									}
+								},
+								"voiceActors": [{
+									"id": 126579,
+									"name": {
+										"first": "Miyuri",
+										"last": "Shimabukuro"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 126834,
+									"name": {
+										"first": "Kogarashi",
+										"last": "Fuyuzora"
+									}
+								},
+								"voiceActors": [{
+									"id": 96154,
+									"name": {
+										"first": "Yuuki",
+										"last": "Ono"
+									}
+								}]
+							}
+						]
+					}
+				},
+				{
+					"id": 101830,
+					"title": {
+						"romaji": "Golden Kamui OVA",
+						"english": "Golden Kamuy OVA",
+						"native": "ゴールデンカムイOVA"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 6142,
+							"name": "Geno Studio"
+						}]
+					},
+					"characters": {
+						"edges": []
+					}
+				}
+			]
+		}
+	}
+}

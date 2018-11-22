@@ -1,0 +1,627 @@
+{
+	"data": {
+		"Page": {
+			"media": [{
+					"id": 97940,
+					"title": {
+						"romaji": "Black Clover",
+						"english": null,
+						"native": "ブラッククローバー"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 1,
+							"name": "Studio Pierrot"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 123283,
+									"name": {
+										"first": "Noelle",
+										"last": "Silva"
+									}
+								},
+								"voiceActors": [{
+									"id": 118739,
+									"name": {
+										"first": "Kana\r\n",
+										"last": "Yuuki"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 123284,
+									"name": {
+										"first": "Yuno",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+										"id": 105989,
+										"name": {
+											"first": "Nobunaga",
+											"last": "Shimazaki"
+										}
+									},
+									{
+										"id": 125130,
+										"name": {
+											"first": "Aki",
+											"last": "Sekine"
+										}
+									}
+								]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 123285,
+									"name": {
+										"first": "Asta",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+										"id": 123286,
+										"name": {
+											"first": "Gakuto",
+											"last": "Kajiwara"
+										}
+									},
+									{
+										"id": 125129,
+										"name": {
+											"first": "Nao",
+											"last": "Fujita"
+										}
+									}
+								]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124682,
+									"name": {
+										"first": "Orsi",
+										"last": "Ofai"
+									}
+								},
+								"voiceActors": [{
+									"id": 120266,
+									"name": {
+										"first": "Kazuki",
+										"last": "Nakao"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124433,
+									"name": {
+										"first": "Finral",
+										"last": "Roulacase"
+									}
+								},
+								"voiceActors": [{
+									"id": 95086,
+									"name": {
+										"first": "Jun",
+										"last": "Fukuyama"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124434,
+									"name": {
+										"first": "Charlotte",
+										"last": "Roselei"
+									}
+								},
+								"voiceActors": [{
+									"id": 95034,
+									"name": {
+										"first": "Yuu",
+										"last": "Kobayashi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124435,
+									"name": {
+										"first": "Julius",
+										"last": "Nova Chrono"
+									}
+								},
+								"voiceActors": [{
+									"id": 95006,
+									"name": {
+										"first": "Toshiyuki",
+										"last": "Morikawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124436,
+									"name": {
+										"first": "Vanessa",
+										"last": "Enoteca"
+									}
+								},
+								"voiceActors": [{
+									"id": 95081,
+									"name": {
+										"first": "Nana",
+										"last": "Mizuki"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124437,
+									"name": {
+										"first": "Klaus",
+										"last": "Lunettes"
+									}
+								},
+								"voiceActors": [{
+									"id": 95494,
+									"name": {
+										"first": "Takuma",
+										"last": "Terashima"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124438,
+									"name": {
+										"first": "Mimosa",
+										"last": "Vermilion"
+									}
+								},
+								"voiceActors": [{
+									"id": 105707,
+									"name": {
+										"first": "Asuka",
+										"last": "Nishi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124439,
+									"name": {
+										"first": "Magna",
+										"last": "Swing"
+									}
+								},
+								"voiceActors": [{
+									"id": 108055,
+									"name": {
+										"first": "Genki",
+										"last": "Muro"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124440,
+									"name": {
+										"first": "Yami",
+										"last": "Sukehiro"
+									}
+								},
+								"voiceActors": [{
+									"id": 95095,
+									"name": {
+										"first": "Junichi",
+										"last": "Suwabe"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124441,
+									"name": {
+										"first": "William",
+										"last": "Vangeance"
+									}
+								},
+								"voiceActors": [{
+									"id": 95212,
+									"name": {
+										"first": "Daisuke",
+										"last": "Ono"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124442,
+									"name": {
+										"first": "Nozel",
+										"last": "Silva"
+									}
+								},
+								"voiceActors": [{
+									"id": 95097,
+									"name": {
+										"first": "Kousuke",
+										"last": "Toriumi"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124443,
+									"name": {
+										"first": "Lily",
+										"last": "Aquaria"
+									}
+								},
+								"voiceActors": [{
+									"id": 119204,
+									"name": {
+										"first": "Miyu",
+										"last": "Kubota"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124444,
+									"name": {
+										"first": "Grey",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+										"id": 124445,
+										"name": {
+											"first": "Masayuki",
+											"last": "Akasaka"
+										}
+									},
+									{
+										"id": 117003,
+										"name": {
+											"first": "Minami",
+											"last": "Takahashi"
+										}
+									}
+								]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124446,
+									"name": {
+										"first": "Gauche",
+										"last": "Adlai"
+									}
+								},
+								"voiceActors": [{
+									"id": 95245,
+									"name": {
+										"first": "Satoshi",
+										"last": "Hino"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124447,
+									"name": {
+										"first": "Charmy",
+										"last": "Pappitson"
+									}
+								},
+								"voiceActors": [{
+									"id": 107711,
+									"name": {
+										"first": "Kiyono",
+										"last": "Yasuno"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124448,
+									"name": {
+										"first": "Gordon",
+										"last": "Agrippa"
+									}
+								},
+								"voiceActors": [{
+									"id": 105273,
+									"name": {
+										"first": "Kenichirou",
+										"last": "Matsuda"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124449,
+									"name": {
+										"first": "Luck",
+										"last": "Voltia"
+									}
+								},
+								"voiceActors": [{
+									"id": 110919,
+									"name": {
+										"first": "Ayumu",
+										"last": "Murase"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124454,
+									"name": {
+										"first": "Marx",
+										"last": "Francois"
+									}
+								},
+								"voiceActors": [{
+									"id": 118591,
+									"name": {
+										"first": "Yoshitaka",
+										"last": "Yamaya"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124455,
+									"name": {
+										"first": "Gueldre",
+										"last": "Poizot"
+									}
+								},
+								"voiceActors": [{
+									"id": 95002,
+									"name": {
+										"first": "Tomokazu",
+										"last": "Sugita"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124456,
+									"name": {
+										"first": "Jack the Ripper",
+										"last": null
+									}
+								},
+								"voiceActors": [{
+									"id": 95087,
+									"name": {
+										"first": "Daisuke",
+										"last": "Namikawa"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124457,
+									"name": {
+										"first": "Rill",
+										"last": "Boismortier"
+									}
+								},
+								"voiceActors": [{
+									"id": 111635,
+									"name": {
+										"first": "Natsuki",
+										"last": "Hanae"
+									}
+								}]
+							},
+							{
+								"role": "SUPPORTING",
+								"node": {
+									"id": 124458,
+									"name": {
+										"first": "Dorothy",
+										"last": "Unsworth"
+									}
+								},
+								"voiceActors": []
+							}
+						]
+					}
+				},
+				{
+					"id": 97988,
+					"title": {
+						"romaji": "DRIFTERS OVA",
+						"english": null,
+						"native": null
+					},
+					"studios": {
+						"nodes": [{
+							"id": 346,
+							"name": "Hoods Entertainment"
+						}]
+					},
+					"characters": {
+						"edges": []
+					}
+				},
+				{
+					"id": 99938,
+					"title": {
+						"romaji": "Girls und Panzer Saishuushou",
+						"english": "Girls und Panzer das Finale",
+						"native": "ガールズ&パンツァー 最終章"
+					},
+					"studios": {
+						"nodes": []
+					},
+					"characters": {
+						"edges": []
+					}
+				},
+				{
+					"id": 100003,
+					"title": {
+						"romaji": "Katainaka ni Totsui de Kita Russia Musume to H Shimakuru Ohanashi",
+						"english": "Ecchi with a Rural Russian Housewife",
+						"native": "片田舎に嫁いできた○シア娘とHしまくるお話"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 6155,
+							"name": "Collaboration Works petit"
+						}]
+					},
+					"characters": {
+						"edges": [{
+							"role": "MAIN",
+							"node": {
+								"id": 124015,
+								"name": {
+									"first": "Arisa",
+									"last": null
+								}
+							},
+							"voiceActors": [{
+								"id": 124047,
+								"name": {
+									"first": "Marika",
+									"last": "Tanaka"
+								}
+							}]
+						}]
+					}
+				},
+				{
+					"id": 99911,
+					"title": {
+						"romaji": "Kagirohi: Shaku Kei - Another",
+						"english": null,
+						"native": "かぎろひ~勺景~ Another"
+					},
+					"studios": {
+						"nodes": [{
+							"id": 274,
+							"name": "Suzuki Mirano"
+						}]
+					},
+					"characters": {
+						"edges": [{
+								"role": "MAIN",
+								"node": {
+									"id": 123882,
+									"name": {
+										"first": "Ajisai",
+										"last": "Minazuki"
+									}
+								},
+								"voiceActors": [{
+									"id": 96548,
+									"name": {
+										"first": "Oma",
+										"last": "Ichimura"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 123884,
+									"name": {
+										"first": "Kaede",
+										"last": "Kirishima"
+									}
+								},
+								"voiceActors": [{
+									"id": 119933,
+									"name": {
+										"first": "Miu",
+										"last": "Yuzuhara"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 123885,
+									"name": {
+										"first": "Sumire",
+										"last": "Nezu"
+									}
+								},
+								"voiceActors": [{
+									"id": 120207,
+									"name": {
+										"first": "Matsuri",
+										"last": "Mizuguchi"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 123886,
+									"name": {
+										"first": "Mizuki",
+										"last": "Tosa"
+									}
+								},
+								"voiceActors": [{
+									"id": 119847,
+									"name": {
+										"first": "Yukari",
+										"last": "Hirayama"
+									}
+								}]
+							},
+							{
+								"role": "MAIN",
+								"node": {
+									"id": 123887,
+									"name": {
+										"first": "Aoi",
+										"last": "Takanashi"
+									}
+								},
+								"voiceActors": []
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}
