@@ -46,7 +46,7 @@ body {
 	background-color: #272c38;
 }
 
-a, p, h1, h2, h3 {
+a, p, h1, h2, h3, label {
 	color: rgb(191, 191, 191);
 	margin: 0;
 
@@ -58,7 +58,7 @@ a {
 	font-weight: bold;
 }
 
-p {
+p, label {
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 12pt;
 	margin-bottom: 0.5em;
@@ -83,6 +83,21 @@ h3 {
 }
 
 
+/* for debugging database queries */
+
+table {
+	display: inline-block;
+}
+
+th, td {
+	padding: 0.5em;
+	border: 1px white solid;
+	color: white;
+}
+
+/* for debugging database queries */
+
+
 #site_banner {
 	display: inline-block;
 	margin: 0 auto; 
@@ -90,16 +105,53 @@ h3 {
 
 
 .main {
+	box-sizing: border-box;
 	display: block;
 	width: 75%;
 	min-width: 900px;
 	position: relative;
 	margin: 0 auto;
+	padding: 5em 2em;
 }
+
+
+.browse {
+	padding: 5em;
+}
+
+.browse_options {
+	display: inline-block;
+	width: 19.5%;
+	float: left;
+	text-align: left;
+	border: 1px red dashed;
+}
+
+.browse_results {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 79.5%;
+	float: left;
+	padding: 1em;
+	border: 1px red dashed;
+}
+
+.browse_options input{
+	margin: 0;
+	margin-bottom: 0.5em;
+	margin-right: 0.5em;
+}
+
+.browse_options input[type="text"] {
+	width: 5em;
+	text-align: center;
+}
+
 
 .nav {
 	height: 5em;
 	border-bottom: 1px rgba(255, 255, 255, 0.25) solid;
+	padding: 0;
 }
 
 .nav_element {

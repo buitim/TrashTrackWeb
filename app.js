@@ -1,3 +1,5 @@
+var http = require('http');
+var url = require('url');
 var express = require('express');
 var express_handlebars = require('express-handlebars');
 var handlebars = require('handlebars'); // handlebars is a template system we will use for our pages
@@ -13,7 +15,7 @@ app.use(express.static('public'));
 
 const { Client } = require('pg');
 
-var db = new Client({
+var db = new Client ({
 
 	connectionString: process.env.DATABASE_URL,
 	ssl: true,
@@ -21,6 +23,19 @@ var db = new Client({
 });
 
 db.connect();
+
+
+var min_year, max_year;
+
+db.query('SELECT MIN(year) AS year FROM public.season', (error, result) => {
+	if (error) { throw error; } 
+	else { min_year = (result.rows[0]["year"]) }
+});
+
+db.query('SELECT MAX(year) AS year FROM public.season', (error, result) => {
+	if (error) { throw error; } 
+	else { max_year = (result.rows[0]["year"]) }
+});
 
 
 // set the port of our application
@@ -40,9 +55,37 @@ app.get('/index', function (req, res) {
 	res.render('index');
 });
 
-// if index page is requested, find "browse.handlebars" in views and show it to user
+app.get('browse?*', function (req, res) {
+	
+	var url = req.url;
+	console.log(req.url);
+	
+});
+
+// if browse page is requested, find "browse.handlebars" in views and show it to user
 app.get('/browse', function (req, res) {
-	res.render('browse');
+	
+	var context, query, query_result = [];
+
+	query = {text: 'SELECT * FROM (public.season NATURAL JOIN public.show) WHERE year = $1', values: [ max_year ], rowMode: 'array'};
+	
+	db.query(query, function (error, result) {
+
+		if (error) { throw error; } 
+		else { 
+			
+			for (x in result.rows) {
+				query_result.push( result.rows[x] );
+				console.log( result.rows[x] );
+			}
+			
+			context = { min_year: min_year, max_year: max_year, results: query_result };
+			
+			res.render('browse', context);
+		}
+		
+	});
+	
 });
 
 // for anything else, just show 404 error
