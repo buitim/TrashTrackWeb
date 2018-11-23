@@ -83,6 +83,21 @@ h3 {
 }
 
 
+/* for debugging database queries */
+
+table {
+	display: inline-block;
+}
+
+th, td {
+	padding: 0.5em;
+	border: 1px white solid;
+	color: white;
+}
+
+/* for debugging database queries */
+
+
 #site_banner {
 	display: inline-block;
 	margin: 0 auto; 
@@ -123,6 +138,13 @@ h3 {
 
 .browse_options input{
 	margin: 0;
+	margin-bottom: 0.5em;
+	margin-right: 0.5em;
+}
+
+.browse_options input[type="text"] {
+	width: 5em;
+	text-align: center;
 }
 
 
