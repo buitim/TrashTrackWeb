@@ -37,7 +37,7 @@
 	opacity: 0;
 	animation-name: fade_in;
 	animation-delay: 0.25s;
-    animation-duration: 0.75s;
+    animation-duration: 0.25s;
     animation-fill-mode: forwards;
 }
 
@@ -106,7 +106,7 @@ h3 {
 	display: inline-block;
 	text-decoration: none;
 	margin: 0;
-	margin-top: 2em;
+	margin-bottom: 0.5em;
 }
 
 .nav_element:hover {
@@ -116,18 +116,38 @@ h3 {
 .nav_left {
 	position: absolute;
 	left: 0;
+	bottom: 0;
 	margin-left: 2em;
 }
+
 
 .nav_right {
 	position: absolute;
 	right: 0;
+	bottom: 0;
 	margin-right: 2em;
 }
 
 .nav_link {
 	margin-left: 2em;
 }
+
+
+.logo_text {
+	display: inline;
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+	font-size: 20pt;
+}
+
+.logo_left {
+	color: white;
+}
+
+.logo_right {
+	color: #02aaff;
+}
+
 
 .link_button {
 	display: inline-block;
@@ -145,12 +165,5 @@ h3 {
 	border: 0.125em #02aaff solid;
 	cursor: pointer;
 }
-
-
-
-
-
-
-
 
 
