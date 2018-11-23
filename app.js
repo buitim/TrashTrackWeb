@@ -42,7 +42,10 @@ app.get('/index', function (req, res) {
 
 // if index page is requested, find "browse.handlebars" in views and show it to user
 app.get('/browse', function (req, res) {
-	res.render('browse');
+	
+	var context = { min_year: '1957', max_year: '2018' };
+	
+	res.render('browse', context);
 });
 
 // for anything else, just show 404 error
