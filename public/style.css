@@ -131,8 +131,7 @@ th, td {
 	box-sizing: border-box;
 	display: inline-block;
 	width: 79.5%;
-	float: left;
-	padding: 1em;
+	padding: 2em;
 	border: 1px red dashed;
 }
 
