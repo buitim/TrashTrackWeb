@@ -1,5 +1,3 @@
-var http = require('http');
-var url = require('url');
 var express = require('express');
 var express_handlebars = require('express-handlebars');
 var handlebars = require('handlebars'); // handlebars is a template system we will use for our pages
@@ -25,17 +23,107 @@ var db = new Client ({
 db.connect();
 
 
-var min_year, max_year;
+var min_year;
+var max_year;
 
-db.query('SELECT MIN(year) AS year FROM public.season', (error, result) => {
-	if (error) { throw error; } 
-	else { min_year = (result.rows[0]["year"]) }
-});
+// gets the least recent year value and most recent year value from the database
+function get_year_range () {
+	
+	db.query('SELECT MIN(year) AS year FROM public.season', (error, result) => {
+		if (error) { min_year = 0; } 
+		else { min_year = (result.rows[0]["year"]) }
+	});
 
-db.query('SELECT MAX(year) AS year FROM public.season', (error, result) => {
-	if (error) { throw error; } 
-	else { max_year = (result.rows[0]["year"]) }
-});
+	db.query('SELECT MAX(year) AS year FROM public.season', (error, result) => {
+		if (error) { max_year = 0; } 
+		else { max_year = (result.rows[0]["year"]) }
+	});
+	
+}
+
+get_year_range();
+
+
+// compares value to list of values, returns true if it matches any or false if it matches none
+function compare_values (value, list) {
+	
+	for (x in list) {
+		
+		if (value === list[x]) { return true; }
+		
+	}
+	
+	return false;
+	
+}
+
+// capitalize first character of a string and return result
+function capitalize_string (string) {
+	
+	var new_string = string[0].toUpperCase() + string.substring(1); // toUpperCase() returns only the first character, must add the rest
+	return new_string;
+	
+}
+
+// checks query parameters and returns a list of valid values
+function process_parameters (parameters) {
+	
+	var type, season, year;
+	
+	console.log(parameters);
+	
+	if ('type' in parameters) {
+		
+		var type_valid = compare_values( parameters.type, [ 'show', 'character', 'voice_actor', 'studio' ] );
+		if (type_valid === true) { type = parameters.type; }
+		else { type = 'show'; }
+		
+	}
+	else { type = 'show'; }
+	
+	if ('season' in parameters) {
+		
+		var season_valid = compare_values( parameters.season, [ 'any', 'fall', 'winter', 'spring', 'summer' ] );
+		if (season_valid === true) { season = parameters.season; }
+		else { season = 'any'; }
+		
+	}
+	else { season = 'any'; }
+	
+	if ('year' in parameters) {
+		
+		if (parameters.year >= min_year && parameters.year <= max_year) { year = parameters.year; }
+		else { year = max_year; }
+		
+	}
+	else { year = max_year; }
+	
+	console.log([ type, season, year ]);
+	
+	return [ type, season, year ];
+	
+}
+
+// constructs query for database using array of strings as parameters
+function build_query (parameters) {
+	
+	var query_text, query_values = [], query;
+	
+	query_text = 'SELECT * FROM public.' + parameters[0] + '_view WHERE year = $1';
+	query_values.push( parameters[2] );
+		
+	if (parameters[1] != 'any') {
+	
+		query_text = query_text + ' AND season = $2'; // add another condition for WHERE if a particular season was specified
+		query_values.push( capitalize_string(parameters[1]) );
+		
+	}
+	
+	query = { text: query_text, values: query_values, rowMode: 'array' }
+	
+	return query;
+	
+}
 
 
 // set the port of our application
@@ -55,19 +143,44 @@ app.get('/index', function (req, res) {
 	res.render('index');
 });
 
-app.get('browse?*', function (req, res) {
+// handles any queries user makes through the limited front end interface
+app.get('/browse*', function (req, res, next) {
 	
-	var url = req.url;
-	console.log(req.url);
+	get_year_range(); // update values just in case they have changed, does not matter when this completes
+	
+	var parameters = process_parameters(req.query);
+	
+	var query = build_query(parameters); // this should be safe from injection, because of parameter processing 
+	
+	console.log(query);
+	
+	db.query(query, function (error, result) {
+
+		if (error) { throw error; } 
+		else { 
+			
+			console.log("Query done!");
+			
+			var query_result = [];
+			for (x in result.rows) { query_result.push( result.rows[x] ); }
+	
+			var context = { min_year: min_year, max_year: max_year, results: query_result };
+			res.render('browse', context);
+			
+		}
+		
+	});
 	
 });
+
+/*
 
 // if browse page is requested, find "browse.handlebars" in views and show it to user
 app.get('/browse', function (req, res) {
 	
 	var context, query, query_result = [];
 
-	query = {text: 'SELECT * FROM (public.season NATURAL JOIN public.show) WHERE year = $1', values: [ max_year ], rowMode: 'array'};
+	query = {text: 'SELECT title, name, season, year FROM (public.show NATURAL JOIN public.studio NATURAL JOIN public.season) WHERE year = $1 ORDER BY title', values: [ max_year ], rowMode: 'array'};
 	
 	db.query(query, function (error, result) {
 
@@ -87,6 +200,8 @@ app.get('/browse', function (req, res) {
 	});
 	
 });
+
+*/
 
 // for anything else, just show 404 error
 app.get('*', function (req, res) {

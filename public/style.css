@@ -136,6 +136,9 @@ th, td {
 	border: 1px red dashed;
 }
 
+
+/* for debugging database queries */
+
 .browse_options input{
 	margin: 0;
 	margin-bottom: 0.5em;
@@ -146,6 +149,8 @@ th, td {
 	width: 5em;
 	text-align: center;
 }
+
+/* for debugging database queries */
 
 
 .nav {
