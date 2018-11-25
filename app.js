@@ -177,23 +177,23 @@ function build_browse_query(parameters) {
 }
 
 
-// function process_create_query(parameters){
+function process_create_parameters(parameters){
 
-// 	var year, name, character_first, character_last, voice_first, voice_last, season, studio;
+	var year, name, character_first, character_last, voice_first, voice_last, season, studio;
 
-// 	console.log(parameters);
+	console.log(parameters);
 
-// 	// if ('title' in parameters){
-// 	// 	if(parameters.title )
+	// if ('title' in parameters){
+	// 	if(parameters.title )
 
-// 	// }
-// 	// if('year')
-// 	year = parameters.year;
-// 	name = parameters.title;
-// 	character_first = parameters.
+	// }
+	// if('year')
+	year = parameters.year;
+	name = parameters.title;
+	character_first = parameters.
 
 
-// }
+}
 
 function build_create(parameters) {
 
@@ -290,6 +290,8 @@ app.get('/create', function (req, res) {
 			}
 		});
 	}
+
+	console.log("Hello!");
 
 });
 
