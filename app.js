@@ -142,11 +142,11 @@ function build_create(parameters){
 
 	var query_array = [show_query,character_query,voice_query,studio_query,season_query];
 
-		query1 = { text: show_query, values: $1, rowMode: 'array' };
-		query2 = { text: character_query, values: [$2,$3], rowMode: 'array' };
-		query3 = { text: voice_query, values: [$4,$5], rowMode: 'array' };
-		query4 = { text: studio_query, values: $6, rowMode: 'array' };
-		query5 = { text: season_query, values: [$7,$8], rowMode: 'array' };
+		query1 = { text: show_query, values: parameters[0], rowMode: 'array' };
+		query2 = { text: character_query, values: [parameters[1],parameters[2]], rowMode: 'array' };
+		query3 = { text: voice_query, values: [parameters[3],parameters[4]], rowMode: 'array' };
+		query4 = { text: studio_query, values: parameters[5], rowMode: 'array' };
+		query5 = { text: season_query, values: [parameters[6],parameters[7]], rowMode: 'array' };
 
 	var query_values = [query1,query2,query3,query4,query5];
 
@@ -192,7 +192,7 @@ app.get('/manage', function(req,res){
 
 app.get('/create', function(req,res){
 
-	var parameters = process_parameters(req.query);
+	var parameters = process_browse_parameters(req.query);
 	var query = build_create(parameters);
 
 	console.log(query);
