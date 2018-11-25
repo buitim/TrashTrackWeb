@@ -197,13 +197,15 @@ app.get('/create', function(req,res){
 
 	console.log(query);
 
-	db.query(query, function(error,result){
-
-		if(error){throw error;}
-		else{
-			res.render('create');
-		}
-	});
+	for(x in query){
+		db.query(x, function(error,result){
+	
+			if(error){throw error;}
+			else{
+				res.render('create');
+			}
+		});
+	}
 
 });
 
