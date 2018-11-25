@@ -155,7 +155,8 @@ td {
 }
 
 .filter_header {
-	border-bottom: 5px #02aaff;
+	border-bottom: 1px solid #02aaff;
+	padding-bottom: 8px;
 }
 
 .filter_group label {
