@@ -191,65 +191,69 @@ function process_create_parameters(parameters){
 	// year = parameters.year;
 	// name = parameters.title;
 	// character_first = parameters.
+	for(x in parameters){
+		if(parameters[x] == '\0')
+			parameters[x] = NULL;
+	}
 
 
 	console.log(parameters);
 }
 
-// function build_create(parameters) {
+function build_create(parameters) {
 
-// 	var show_query, season_query, character_query, studio_query, voice_query;
-// 	var query1, query2, query3, query4, query5;
+	var show_query, season_query, character_query, studio_query, voice_query;
+	var query1, query2, query3, query4, query5;
 
-// 	show_query = 'INSERT INTO public.show (title) VALUES ($1)';
-// 	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($2,$3)';
-// 	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($4,$5)';
-// 	studio_query = 'INSERT INTO public.studio (name) VALUES ($6)';
-// 	season_query = 'INSERT INTO public.season (year,season) VALUES ($7,$8)';
+	show_query = 'INSERT INTO public.show (title) VALUES ($1)';
+	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($2,$3)';
+	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($4,$5)';
+	studio_query = 'INSERT INTO public.studio (name) VALUES ($6)';
+	season_query = 'INSERT INTO public.season (year,season) VALUES ($7,$8)';
 
-// 	var query_array = [show_query, character_query, voice_query, studio_query, season_query];
+	var query_array = [show_query, character_query, voice_query, studio_query, season_query];
 
-// 	query1 = {
-// 		text: show_query,
-// 		values: parameters[0],
-// 		rowMode: 'array'
-// 	};
-// 	query2 = {
-// 		text: character_query,
-// 		values: [parameters[1], parameters[2]],
-// 		rowMode: 'array'
-// 	};
-// 	query3 = {
-// 		text: voice_query,
-// 		values: [parameters[3], parameters[4]],
-// 		rowMode: 'array'
-// 	};
-// 	query4 = {
-// 		text: studio_query,
-// 		values: parameters[5],
-// 		rowMode: 'array'
-// 	};
-// 	query5 = {
-// 		text: season_query,
-// 		values: [parameters[6], parameters[7]],
-// 		rowMode: 'array'
-// 	};
+	query1 = {
+		text: show_query,
+		values: parameters[0],
+		rowMode: 'array'
+	};
+	query2 = {
+		text: character_query,
+		values: [parameters[1], parameters[2]],
+		rowMode: 'array'
+	};
+	query3 = {
+		text: voice_query,
+		values: [parameters[3], parameters[4]],
+		rowMode: 'array'
+	};
+	query4 = {
+		text: studio_query,
+		values: parameters[5],
+		rowMode: 'array'
+	};
+	query5 = {
+		text: season_query,
+		values: [parameters[6], parameters[7]],
+		rowMode: 'array'
+	};
 
-// 	var query_values = [query1, query2, query3, query4, query5];
+	var query_values = [query1, query2, query3, query4, query5];
 
-// 	return query_values;
+	return query_values;
 
-// }
-
-
-// function build_delete(parameters) {
-
-// }
+}
 
 
-// function build_update(parameters) {
+function build_delete(parameters) {
 
-// }
+}
+
+
+function build_update(parameters) {
+
+}
 
 
 
@@ -274,34 +278,37 @@ app.get('/manage', function (req, res) {
 	res.render('manage');
 });
 
-app.post('/create', function (req, res) {
+app.get('/create', function (req, res) {
 
-	// var parameters = process_create_parameters(req.query);
-	// var query = build_create(parameters);
+	var parameters = process_create_parameters(req.body);
+	var query = build_create(parameters);
 
-	// console.log(query);
+	console.log(query);
 
-	// for (x in query) {
-	// 	db.query(query[x], function (error, result) {
+	for (x in query) {
+		db.query(query[x], function (error, result) {
 
-	// 		if (error) {
-	// 			throw error;
-	// 		} else {
-	// 			res.render('create');
-	// 		}
-	// 	});
-	// }
+			if (error) {
+				throw error;
+			} else {
+				res.render('create',query[x]);
+			}
+		});
+	}
 
-	// console.log("Hello!");
+	console.log("Hello!");
 
-	process_create_parameters(req.body.show);
+	// process_create_parameters(req.body.show);
 
-	console.log(req.body);
+	// var show_name = req.body.show;
+	// console.log(show_name);
 	// res.render('create');
+
 });
 
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
+
 
 	get_year_range(); // update values just in case they have changed, does not matter when this completes
 
