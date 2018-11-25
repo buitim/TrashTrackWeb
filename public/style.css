@@ -160,7 +160,6 @@ td {
 	font-weight: bolder;
 }
 
-.year_group,
 .filter_group label {
 	cursor: pointer;
 	display: inline-block;
@@ -170,6 +169,7 @@ td {
 	margin-left: 5px;
 }
 
+
 .browse_results {
 	box-sizing: border-box;
 	display: inline-block;
@@ -178,10 +178,25 @@ td {
 	border: 1px red dashed;
 }
 
+.year_group {
+	cursor: pointer;
+	display: inline-block;
+	width: 85%;
+	padding: 8px;
+	border-radius: 5px;
+	margin-left: 5px;
+	background: rgba(31, 35, 45, 0.8);
+}
+
 #year {
-	width: 60px;
-	height: 2em;
+	width: 100%;
 	font-size: 1rem;
+
+	color: rgb(159, 173, 189);
+	font-weight: bold;
+	background-color: transparent;
+
+	border: 0;
 }
 
 input {
@@ -288,4 +303,11 @@ input[type=submit] {
 	background-color: #02aaff;
 	border: 0.125em #02aaff solid;
 	cursor: pointer;
+}
+
+/* Disables spinner on number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
