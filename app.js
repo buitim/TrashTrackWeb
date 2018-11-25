@@ -143,6 +143,12 @@ app.get('/index', function (req, res) {
 	res.render('index');
 });
 
+
+app.get('/manage', function(req,res){
+	res.render('manage');
+});
+
+
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
 	
