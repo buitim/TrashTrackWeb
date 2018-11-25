@@ -100,12 +100,6 @@ function fix_headers(headers) {
 		
 	}
 	
-	for (x in new_headers) {
-		
-
-		
-	}
-	
 	return new_headers;
 	
 }
