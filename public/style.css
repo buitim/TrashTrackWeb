@@ -159,12 +159,14 @@ td {
 	padding-bottom: 8px;
 }
 
+.year_group,
 .filter_group label {
 	cursor: pointer;
 	display: inline-block;
-	width: 100%;
+	width: 85%;
 	padding: 8px;
 	border-radius: 5px;
+	margin-left: 5px;
 }
 
 .browse_results {
