@@ -27,18 +27,28 @@
 	text-align: center;
 }
 
+.centered_div {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
 
 @keyframes fade_in {
-	from { opacity: 0; }
-    to { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 .fades_in {
 	opacity: 0;
 	animation-name: fade_in;
 	animation-delay: 0.25s;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
 }
 
 
@@ -46,7 +56,12 @@ body {
 	background-color: #272c38;
 }
 
-a, p, h1, h2, h3, label {
+a,
+p,
+h1,
+h2,
+h3,
+label {
 	color: rgb(191, 191, 191);
 	margin: 0;
 
@@ -58,13 +73,16 @@ a {
 	font-weight: bold;
 }
 
-p, label {
+p,
+label {
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 12pt;
 	margin-bottom: 0.5em;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
 	margin-bottom: 0.25em;
@@ -89,7 +107,8 @@ table {
 	display: inline-block;
 }
 
-th, td {
+th,
+td {
 	padding: 0.5em;
 	border: 1px white solid;
 	color: white;
@@ -100,7 +119,7 @@ th, td {
 
 #site_banner {
 	display: inline-block;
-	margin: 0 auto; 
+	margin: 0 auto;
 }
 
 
@@ -138,7 +157,7 @@ th, td {
 
 /* for debugging database queries */
 
-.browse_options input{
+.browse_options input {
 	margin: 0;
 	margin-bottom: 0.5em;
 	margin-right: 0.5em;
@@ -221,5 +240,3 @@ th, td {
 	border: 0.125em #02aaff solid;
 	cursor: pointer;
 }
-
-
