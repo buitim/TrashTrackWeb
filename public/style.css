@@ -143,7 +143,7 @@ td {
 	width: 19.5%;
 	float: left;
 	text-align: left;
-	border: 1px red dashed;
+	/* border: 1px red dashed; */
 }
 
 .browse_results {
