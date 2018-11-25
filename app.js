@@ -149,6 +149,13 @@ app.get('/manage', function(req,res){
 });
 
 
+app.get('/create', function(req,res){
+
+	res.render('create');
+
+})
+
+
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
 	
