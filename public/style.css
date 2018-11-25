@@ -111,6 +111,13 @@ th,
 td {
 	padding: 0.5em;
 	border: 1px white solid;
+}
+
+th {
+	color: #02aaff;
+}
+
+td {
 	color: white;
 }
 
@@ -143,21 +150,21 @@ td {
 	width: 19.5%;
 	float: left;
 	text-align: left;
-	/* border: 1px red dashed; */
 }
 
 /* Start of left module styling */
+
 .filter_group {
 	display: inline-block;
-	color: rgb(var(133, 150, 165));
+	color: rgb(133, 150, 165);
 	font-size: 1.4rem;
-	margin-bottom: 8px;
+	margin-bottom: 0.5em;
 	width: 75%;
 }
 
 .filter_header {
-	border-bottom: 1px solid #02aaff;
-	padding-bottom: 8px;
+	border-bottom: 0.1em solid #02aaff;
+	padding-bottom: 0.5em;
 	font-weight: bolder;
 }
 
@@ -165,30 +172,29 @@ td {
 	cursor: pointer;
 	display: inline-block;
 	width: 85%;
-	padding: 8px;
-	border-radius: 5px;
-	margin-left: 10px;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	margin-left: 0.5em;
 }
 
 .year_group {
 	cursor: pointer;
 	display: inline-block;
 	width: 85%;
-	padding: 3px 8px 3px 8px;
-	border-radius: 5px;
-	margin-left: 10px;
+	padding: 0.15em 0.25em;
+	border-radius: 0.25em;
+	margin-left: 0.5em;
 	background: rgba(31, 35, 45, 0.8);
 }
 
 #year {
 	width: 100%;
 	font-size: 12pt;
-
 	color: rgb(159, 173, 189);
 	font-weight: bold;
 	background-color: transparent;
-
 	border: 0;
+	margin-left: 0.1em;
 }
 
 input {

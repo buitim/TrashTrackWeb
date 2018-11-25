@@ -48,13 +48,13 @@
 		<p>DATABASE QUERY DEBUGGING</p>
 
 		<table>
+		
+			<tr> {{#each headers}} <th>{{this}}</th> {{/each}} </tr>
+		
 			{{#each results}}
-			<tr>
-				{{#each this}}
-				<td>{{this}}</td>
-				{{/each}}
-			</tr>
+				<tr> {{#each this}} <td>{{this}}</td> {{/each}} </tr>
 			{{/each}}
+			
 		</table>
 
 	</div>

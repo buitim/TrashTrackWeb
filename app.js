@@ -5,17 +5,13 @@ var handlebars = require('handlebars'); // handlebars is a template system we wi
 
 var app = express();
 app.set('view engine', 'handlebars');
-app.engine('handlebars', express_handlebars({
-	defaultLayout: 'main'
-}));
+app.engine('handlebars', express_handlebars({ defaultLayout: 'main' }));
 app.use(express.static('public'));
 
 
 // connect to heroku postgres database using example code from heroku
 
-const {
-	Client
-} = require('pg');
+const { Client } = require('pg');
 
 var db = new Client({
 
@@ -77,6 +73,39 @@ function capitalize_string(string) {
 
 }
 
+// fixes the column names retrieved from the database to have spaces instead of underscores and proper capitalization
+function fix_headers(headers) {
+	
+	var new_headers = [];
+	
+	for (x in headers) {
+		
+		new_headers.push( capitalize_string(headers[x]) );
+		
+		new_headers[x] = new_headers[x].replace(/_/g, ' ');
+		
+		for (y in new_headers[x]) {
+			
+			if (new_headers[x][y] === ' ') {
+				
+				new_headers[x] = new_headers[x].slice(0, y) + capitalize_string( new_headers[x].slice(y + 1) ); console.log(new_headers[x].slice(0, y) + capitalize_string( new_headers[x].slice(y + 1) ));
+				
+			}
+			
+		}
+		
+	}
+	
+	for (x in new_headers) {
+		
+
+		
+	}
+	
+	return new_headers;
+	
+}
+
 // checks query parameters and returns a list of valid values
 function process_browse_parameters(parameters) {
 
@@ -131,29 +160,23 @@ function process_browse_parameters(parameters) {
 // constructs query for database using array of strings as parameters
 function build_browse_query(parameters) {
 
-	var query_text, query_values = [],
-		query;
+	var query_text, query_values = [], query;
 
 	query_text = 'SELECT * FROM public.' + parameters[0] + '_view WHERE year = $1';
-	query_values.push(parameters[2]);
+	query_values.push(parameters[2]); // add value of $1 to the list
 
 	if (parameters[1] != 'any') {
 
 		query_text = query_text + ' AND season = $2'; // add another condition for WHERE if a particular season was specified
-		query_values.push(capitalize_string(parameters[1]));
+		query_values.push(capitalize_string(parameters[1])); // add the value of $2 to the list
 
 	}
 
-	query = {
-		text: query_text,
-		values: query_values,
-		rowMode: 'array'
-	}
+	query = { text: query_text, values: query_values };
 
 	return query;
 
 }
-
 
 
 // function process_create_query(parameters){
@@ -174,21 +197,16 @@ function build_browse_query(parameters) {
 
 // }
 
-
-
 function build_create(parameters) {
 
 	var show_query, season_query, character_query, studio_query, voice_query;
 	var query1, query2, query3, query4, query5;
-
 
 	show_query = 'INSERT INTO public.show (title) VALUES ($1)';
 	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($2,$3)';
 	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($4,$5)';
 	studio_query = 'INSERT INTO public.studio (name) VALUES ($6)';
 	season_query = 'INSERT INTO public.season (year,season) VALUES ($7,$8)';
-
-
 
 	var query_array = [show_query, character_query, voice_query, studio_query, season_query];
 
@@ -229,6 +247,7 @@ function build_delete(parameters) {
 
 }
 
+
 function build_update(parameters) {
 
 }
@@ -252,13 +271,9 @@ app.get('/index', function (req, res) {
 	res.render('index');
 });
 
-
 app.get('/manage', function (req, res) {
 	res.render('manage');
 });
-
-
-
 
 app.get('/create', function (req, res) {
 
@@ -280,8 +295,6 @@ app.get('/create', function (req, res) {
 
 });
 
-
-
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
 
@@ -301,16 +314,21 @@ app.get('/browse*', function (req, res, next) {
 
 			console.log("Query done!");
 
-			var query_result = [];
+			var query_results = [], query_headers = [];
+			
+			query_headers = fix_headers( Object.keys(result.rows[0]) ); console.log(query_headers);
+			
 			for (x in result.rows) {
-				query_result.push(result.rows[x]);
+				query_results.push( Object.values(result.rows[x]) );
 			}
 
 			var context = {
 				min_year: min_year,
 				max_year: max_year,
-				results: query_result
+				headers: query_headers,
+				results: query_results
 			};
+			
 			res.render('browse', context);
 
 		}
