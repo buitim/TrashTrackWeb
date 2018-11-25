@@ -143,8 +143,76 @@ td {
 	width: 19.5%;
 	float: left;
 	text-align: left;
-	border: 1px red dashed;
+	/* border: 1px red dashed; */
 }
+
+/* Start of left module styling */
+.filter_group {
+	display: inline-block;
+	color: rgb(var(133, 150, 165));
+	font-size: 1.4rem;
+	margin-bottom: 8px;
+	width: 75%;
+}
+
+.filter_header {
+	border-bottom: 1px solid #02aaff;
+	padding-bottom: 8px;
+	font-weight: bolder;
+}
+
+.filter_group label {
+	cursor: pointer;
+	display: inline-block;
+	width: 85%;
+	padding: 8px;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.year_group {
+	cursor: pointer;
+	display: inline-block;
+	width: 85%;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+	margin-left: 10px;
+	background: rgba(31, 35, 45, 0.8);
+}
+
+#year {
+	width: 100%;
+	font-size: 12pt;
+
+	color: rgb(159, 173, 189);
+	font-weight: bold;
+	background-color: transparent;
+
+	border: 0;
+}
+
+input {
+	cursor: pointer;
+}
+
+input[type=radio]:checked+label {
+	color: rgb(159, 173, 189);
+	font-weight: bold;
+	background: rgba(31, 35, 45, 0.8);
+}
+
+input[type=radio] {
+	visibility: hidden;
+	width: 100%;
+	display: none;
+}
+
+input[type=submit] {
+	background: transparent;
+}
+
+/* End of left module style */
+
 
 .browse_results {
 	box-sizing: border-box;
@@ -153,7 +221,6 @@ td {
 	padding: 2em;
 	border: 1px red dashed;
 }
-
 
 /* for debugging database queries */
 
@@ -223,7 +290,6 @@ td {
 	color: #02aaff;
 }
 
-
 .link_button {
 	display: inline-block;
 	border: 0.125em white solid;
@@ -240,4 +306,11 @@ td {
 	background-color: #02aaff;
 	border: 0.125em #02aaff solid;
 	cursor: pointer;
+}
+
+/* Disables spinner on number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
