@@ -154,6 +154,10 @@ td {
 	width: 75%;
 }
 
+.filter_header {
+	border-bottom: 5px #02aaff;
+}
+
 .filter_group label {
 	cursor: pointer;
 	display: inline-block;
