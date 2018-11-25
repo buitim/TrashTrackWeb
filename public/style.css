@@ -180,6 +180,8 @@ td {
 
 #year {
 	width: 60px;
+	height: 2em;
+	font-size: 1rem;
 }
 
 input {
@@ -196,10 +198,6 @@ input[type=radio] {
 	visibility: hidden;
 	width: 100%;
 	display: none;
-}
-
-input[type=submit] {
-	margin-left: 2em
 }
 
 /* for debugging database queries */
@@ -270,6 +268,9 @@ input[type=submit] {
 	color: #02aaff;
 }
 
+input[type=submit] {
+	background: transparent;
+}
 
 .link_button {
 	display: inline-block;
