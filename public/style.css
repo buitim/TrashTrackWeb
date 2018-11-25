@@ -32,6 +32,7 @@
 	justify-content: space-evenly;
 }
 
+
 @keyframes fade_in {
 	from {
 		opacity: 0;
@@ -227,6 +228,7 @@ td {
 	display: inline-block;
 	border: 0.125em white solid;
 	border-radius: 1em;
+	margin: 0 0.5em;
 	padding: 1em 2em;
 	text-decoration: none;
 	font-weight: bold;
