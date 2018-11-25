@@ -146,6 +146,7 @@ td {
 	/* border: 1px red dashed; */
 }
 
+/* Start of left module styling */
 .filter_group {
 	display: inline-block;
 	color: rgb(var(133, 150, 165));
@@ -167,15 +168,6 @@ td {
 	padding: 8px;
 	border-radius: 5px;
 	margin-left: 5px;
-}
-
-
-.browse_results {
-	box-sizing: border-box;
-	display: inline-block;
-	width: 79.5%;
-	padding: 2em;
-	border: 1px red dashed;
 }
 
 .year_group {
@@ -213,6 +205,21 @@ input[type=radio] {
 	visibility: hidden;
 	width: 100%;
 	display: none;
+}
+
+input[type=submit] {
+	background: transparent;
+}
+
+/* End of left module style */
+
+
+.browse_results {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 79.5%;
+	padding: 2em;
+	border: 1px red dashed;
 }
 
 /* for debugging database queries */
@@ -281,10 +288,6 @@ input[type=radio] {
 
 .logo_right {
 	color: #02aaff;
-}
-
-input[type=submit] {
-	background: transparent;
 }
 
 .link_button {
