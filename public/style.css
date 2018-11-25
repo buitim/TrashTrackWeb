@@ -194,6 +194,11 @@ label {
 	cursor: pointer;
 }
 
+.radio_button {
+	cursor: pointer;
+	width: 100%
+}
+
 /* for debugging database queries */
 
 .browse_options input {
