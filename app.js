@@ -82,6 +82,8 @@ function fix_headers(headers) {
 		
 		new_headers.push( capitalize_string(headers[x]) );
 		
+		/* 
+		
 		new_headers[x] = new_headers[x].replace(/_/g, ' ');
 		
 		for (y in new_headers[x]) {
@@ -93,6 +95,8 @@ function fix_headers(headers) {
 			}
 			
 		}
+		
+		*/
 		
 	}
 	
