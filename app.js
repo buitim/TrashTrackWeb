@@ -126,6 +126,27 @@ function build_browse_query (parameters) {
 }
 
 
+
+function process_create_query(parameters){
+
+	var year, name, character_first, character_last, voice_first, voice_last, season, studio;
+
+	console.log(parameters);
+
+	// if ('title' in parameters){
+	// 	if(parameters.title )
+
+	// }
+	// if('year')
+	year = parameters.year;
+	name = parameters.title;
+	character_first = parameters.
+
+	
+}
+
+
+
 function build_create(parameters){
 
 	var show_query,season_query,character_query,studio_query,voice_query;
@@ -192,13 +213,13 @@ app.get('/manage', function(req,res){
 
 app.get('/create', function(req,res){
 
-	var parameters = process_browse_parameters(req.query);
+	var parameters = process_create_parameters(req.query);
 	var query = build_create(parameters);
 
 	console.log(query);
 
 	for(x in query){
-		db.query(x, function(error,result){
+		db.query(query[x], function(error,result){
 	
 			if(error){throw error;}
 			else{
