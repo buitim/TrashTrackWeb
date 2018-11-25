@@ -167,22 +167,22 @@ td {
 	width: 85%;
 	padding: 8px;
 	border-radius: 5px;
-	margin-left: 5px;
+	margin-left: 10px;
 }
 
 .year_group {
 	cursor: pointer;
 	display: inline-block;
 	width: 85%;
-	padding: 8px;
+	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
-	margin-left: 5px;
+	margin-left: 10px;
 	background: rgba(31, 35, 45, 0.8);
 }
 
 #year {
 	width: 100%;
-	font-size: 1rem;
+	font-size: 12pt;
 
 	color: rgb(159, 173, 189);
 	font-weight: bold;
