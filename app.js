@@ -188,6 +188,8 @@ app.get('/manage', function(req,res){
 });
 
 
+
+
 app.get('/create', function(req,res){
 
 	var parameters = process_parameters(req.query);
@@ -201,9 +203,11 @@ app.get('/create', function(req,res){
 		else{
 			res.render('create');
 		}
-	})
+	});
 
-})
+});
+
+
 
 
 // handles any queries user makes through the limited front end interface
