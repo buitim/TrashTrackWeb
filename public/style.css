@@ -155,12 +155,14 @@ td {
 }
 
 input[type=radio]:checked+label {
-	color: red;
+	color: rgb(159, 173, 189);
 	font-weight: bold;
-	background: rgba(31, 35, 45);
+	background: rgba(31, 35, 45, 0.8);
 }
 
-
+input {
+	cursor: pointer;
+}
 
 /* for debugging database queries */
 
