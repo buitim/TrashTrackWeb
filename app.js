@@ -190,7 +190,18 @@ app.get('/manage', function(req,res){
 
 app.get('/create', function(req,res){
 
-	res.render('create');
+	var parameters = process_parameters(req.query);
+	var query = build_create(parameters);
+
+	console.log(query);
+
+	db.query(query, function(error,result){
+
+		if(error){throw error;}
+		else{
+			res.render('create');
+		}
+	})
 
 })
 
