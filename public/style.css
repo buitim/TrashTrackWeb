@@ -28,9 +28,8 @@
 }
 
 .centered_div {
-	margin: auto;
-	width: 50%;
-	padding: 10px;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 @keyframes fade_in {
