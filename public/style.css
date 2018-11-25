@@ -154,6 +154,10 @@ td {
 	border: 1px red dashed;
 }
 
+#year {
+	width: 80%
+}
+
 input[type=radio]:checked+label {
 	color: rgb(159, 173, 189);
 	font-weight: bold;
