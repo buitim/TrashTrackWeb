@@ -66,7 +66,7 @@ function capitalize_string (string) {
 }
 
 // checks query parameters and returns a list of valid values
-function process_parameters (parameters) {
+function process_browse_parameters (parameters) {
 	
 	var type, season, year;
 	
@@ -105,7 +105,7 @@ function process_parameters (parameters) {
 }
 
 // constructs query for database using array of strings as parameters
-function build_query (parameters) {
+function build_browse_query (parameters) {
 	
 	var query_text, query_values = [], query;
 	
@@ -155,15 +155,14 @@ app.get('/create', function(req,res){
 
 })
 
-
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
 	
 	get_year_range(); // update values just in case they have changed, does not matter when this completes
 	
-	var parameters = process_parameters(req.query);
+	var parameters = process_browse_parameters(req.query);
 	
-	var query = build_query(parameters); // this should be safe from injection, because of parameter processing 
+	var query = build_browse_query(parameters); // this should be safe from injection, because of parameter processing 
 	
 	console.log(query);
 	
@@ -185,36 +184,6 @@ app.get('/browse*', function (req, res, next) {
 	});
 	
 });
-
-/*
-
-// if browse page is requested, find "browse.handlebars" in views and show it to user
-app.get('/browse', function (req, res) {
-	
-	var context, query, query_result = [];
-
-	query = {text: 'SELECT title, name, season, year FROM (public.show NATURAL JOIN public.studio NATURAL JOIN public.season) WHERE year = $1 ORDER BY title', values: [ max_year ], rowMode: 'array'};
-	
-	db.query(query, function (error, result) {
-
-		if (error) { throw error; } 
-		else { 
-			
-			for (x in result.rows) {
-				query_result.push( result.rows[x] );
-				console.log( result.rows[x] );
-			}
-			
-			context = { min_year: min_year, max_year: max_year, results: query_result };
-			
-			res.render('browse', context);
-		}
-		
-	});
-	
-});
-
-*/
 
 // for anything else, just show 404 error
 app.get('*', function (req, res) {
