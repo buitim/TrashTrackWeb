@@ -184,6 +184,7 @@ input[type=radio]:checked+label {
 
 input[type=radio] {
 	visibility: hidden;
+	width: 100%
 }
 
 input[type=submit] {
