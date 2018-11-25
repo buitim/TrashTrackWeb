@@ -154,6 +154,13 @@ td {
 	border: 1px red dashed;
 }
 
+input[type=radio]:checked+label {
+	color: red;
+	font-weight: bold;
+	background: rgba(31, 35, 45);
+}
+
+
 
 /* for debugging database queries */
 
