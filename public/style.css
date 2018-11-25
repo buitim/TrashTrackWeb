@@ -155,7 +155,12 @@ td {
 }
 
 #year {
-	width: 80%
+	width: 30%;
+	margin-left: 2em;
+}
+
+input {
+	cursor: pointer;
 }
 
 input[type=radio]:checked+label {
@@ -164,12 +169,12 @@ input[type=radio]:checked+label {
 	background: rgba(31, 35, 45, 0.8);
 }
 
-input {
-	cursor: pointer;
-}
-
 input[type=radio] {
 	visibility: hidden;
+}
+
+input[type=submit] {
+	margin-left: 2em
 }
 
 /* for debugging database queries */
