@@ -148,18 +148,18 @@ td {
 
 .filter_group {
 	display: inline-block;
-	border-radius: 3px;
 	color: rgb(var(133, 150, 165));
 	font-size: 1.4rem;
 	margin-bottom: 8px;
-	padding: 5px 10px;
-	width: 100%
+	width: 75%;
 }
 
 .filter_group label {
 	cursor: pointer;
 	display: inline-block;
-	width: 100%
+	width: 100%;
+	padding: 8px;
+	border-radius: 5px;
 }
 
 .browse_results {
