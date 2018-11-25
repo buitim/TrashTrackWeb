@@ -128,8 +128,29 @@ function build_query (parameters) {
 
 function build_create(parameters){
 
+	var show_query,season_query,character_query,studio_query,voice_query;
+	var query1, query2,query3,query4,query5;
 
-	
+
+	show_query = 'INSERT INTO public.show (title) VALUES ($1)';
+	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($2,$3)';
+	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($4,$5)';
+	studio_query = 'INSERT INTO public.studio (name) VALUES ($6)';
+	season_query = 'INSERT INTO public.season (year,season) VALUES ($7,$8)';
+
+
+
+	var query_array = [show_query,character_query,voice_query,studio_query,season_query];
+
+		query1 = { text: show_query, values: $1, rowMode: 'array' };
+		query2 = { text: character_query, values: [$2,$3], rowMode: 'array' };
+		query3 = { text: voice_query, values: [$4,$5], rowMode: 'array' };
+		query4 = { text: studio_query, values: $6, rowMode: 'array' };
+		query5 = { text: season_query, values: [$7,$8], rowMode: 'array' };
+
+	var query_values = [query1,query2,query3,query4,query5];
+
+	return query_values;
 
 }
 
