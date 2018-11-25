@@ -152,7 +152,6 @@ td {
 	font-size: 1.4rem;
 	margin-bottom: 8px;
 	padding: 5px 10px;
-	cursor: pointer;
 }
 
 .filter_group label {
@@ -189,6 +188,10 @@ input[type=radio] {
 
 input[type=submit] {
 	margin-left: 2em
+}
+
+label {
+	cursor: pointer;
 }
 
 /* for debugging database queries */
