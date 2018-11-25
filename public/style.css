@@ -152,6 +152,11 @@ td {
 	font-size: 1.4rem;
 	margin-bottom: 8px;
 	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.filter_group label {
+	cursor: pointer;
 }
 
 .browse_results {
