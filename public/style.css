@@ -147,15 +147,19 @@ td {
 }
 
 .filter_group {
+	display: inline-block;
 	border-radius: 3px;
 	color: rgb(var(133, 150, 165));
 	font-size: 1.4rem;
 	margin-bottom: 8px;
 	padding: 5px 10px;
+	width: 100%
 }
 
 .filter_group label {
 	cursor: pointer;
+	display: inline-block;
+	width: 100%
 }
 
 .browse_results {
@@ -188,15 +192,6 @@ input[type=radio] {
 
 input[type=submit] {
 	margin-left: 2em
-}
-
-label {
-	cursor: pointer;
-}
-
-.radio_button {
-	cursor: pointer;
-	width: 100%
 }
 
 /* for debugging database queries */
