@@ -157,6 +157,7 @@ td {
 .filter_header {
 	border-bottom: 1px solid #02aaff;
 	padding-bottom: 8px;
+	font-weight: bolder;
 }
 
 .year_group,
@@ -194,7 +195,8 @@ input[type=radio]:checked+label {
 
 input[type=radio] {
 	visibility: hidden;
-	width: 100%
+	width: 100%;
+	display: none;
 }
 
 input[type=submit] {
