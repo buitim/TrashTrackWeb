@@ -212,8 +212,6 @@ function process_create_parameters(parameters){
 	studio = parameters.studio;
 	season = parameters.season;
 
-	console.log(parameters.show);
-
 	return [name,character_first,character_last,voice_first,voice_last,studio,year,season];
 
 
@@ -309,11 +307,15 @@ console.log(req.body);
 		var query = build_create(parameters);
 	
 		// console.log("query 0: " + query[0]);
-		console.log("query1: "+ query[0]);
 	
+		console.log("inside the try but outside the loop");
 		for (x in query) {
-			db.query(query[x], function (error, result) {
-	
+			console.log("Before query");
+
+
+			db.query(query[x].text,query[x].values, function (error, result) {
+			
+				console.log("inside query loop");
 				if (error) {
 					throw error;
 				} 
