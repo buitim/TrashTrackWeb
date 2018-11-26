@@ -88,6 +88,7 @@ function underscores_to_spaces(strings) {
 	
 }
 
+
 // checks query parameters and returns a list of valid values
 function process_browse_parameters(parameters) {
 
@@ -126,11 +127,11 @@ function process_browse_parameters(parameters) {
 		if (parameters.year >= min_year && parameters.year <= max_year) {
 			year = parameters.year;
 		} else {
-			year = max_year;
+			year = 'any';
 		}
 
 	} else {
-		year = max_year;
+		year = 'any';
 	}
 
 	console.log([type, season, year]);
@@ -144,15 +145,33 @@ function build_browse_query(parameters) {
 
 	var query_text, query_values = [], query;
 
-	query_text = 'SELECT * FROM public.' + parameters[0] + '_view WHERE year = $1';
-	query_values.push(parameters[2]); // add value of $1 to the list
-
-	if (parameters[1] != 'any') {
-
-		query_text = query_text + ' AND season = $2'; // add another condition for WHERE if a particular season was specified
-		query_values.push(capitalize_string(parameters[1])); // add the value of $2 to the list
+	query_text = 'SELECT * FROM public.' + parameters[0] + '_view';
+	
+	if (parameters[1] != 'any' && parameters[2] != 'any') {
+		
+		query_text = query_text + ' WHERE season = $1 AND year = $2';
+		query_values.push( capitalize_string(parameters[1]) , parameters[2] ); // add value of $1 and $2 to the list
 
 	}
+	else if (parameters[1] != 'any' || parameters[2] != 'any') {
+		
+		query_text = query_text + ' WHERE ';
+			
+		if ( parameters[1] != 'any' ) {
+				
+			query_text = query_text + 'season = $1'
+			query_values.push( capitalize_string(parameters[1]) );
+			
+		}
+		else {
+			
+			query_text = query_text + 'year = $1'
+			query_values.push( parameters[2] );
+			
+		}
+	
+	}
+	
 
 	query = { text: query_text, values: query_values };
 
