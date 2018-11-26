@@ -32,6 +32,7 @@ db.connect();
 
 var min_year;
 var max_year;
+var delete_value = 0;
 
 // gets the least recent year value and most recent year value from the database
 function get_year_range() {
@@ -260,9 +261,65 @@ function build_create(parameters) {
 }
 
 
-function build_delete(parameters) {
+function process_delete(parameters) {
 
+
+	var value;
+
+	// if()
+	if('show' in parameters){
+			value = parameters.show;
+			delete_value = 1;
+	}
+
+	else if ('char' in parameters){
+			value = parameters.char;
+			delete_value = 2;
+	}
+
+	else if ('voice' in parameters){
+			value = parameters.voice;
+			delete_value = 3;
+	}
+
+	else if ('studio' in parameters){
+			value = parameters.studio;
+			delete_value = 4;
+	}
+
+	else if ('season' in parameters){
+			value = parameters.season;
+			delete_value = 5;
+	}
+
+	else{
+			delete_value = 0;
+			value = '\0';
+	}
+	return value;
 }
+
+function build_delete(parameters){
+
+	var query_text;
+
+	if(delete_value == 1)
+		query_text = 'DELETE FROM public.show WHERE show_id = ' + parameters;
+	else if(delete_value == 2)
+		query_text = 'DELETE FROM public.character WHERE char_id = ' + parameters;
+	else if (delete_value == 3)
+		query_text = 'DELETE FROM public.voice_actor WHERE actor_id = ' + parameters;
+	else if(delete_value == 4)
+		query_text = 'DELETE FROM public.studio WHERE studio_id = ' + parameters;
+	else if(delete_value == 5)
+		query_text = 'DELETE FROM public.season WHERE season_id = ' + parameters;
+	else
+		query_text = NULL;
+
+	return query_text;
+}
+
+
 
 
 function build_update(parameters) {
@@ -323,6 +380,7 @@ console.log(req.body);
 		}
 
 		alert("Successful!");
+		res.render('manage');
 	}
 	catch(e){
 	console.log("Hello!");
@@ -337,6 +395,40 @@ console.log(req.body);
 	// console.log(show_name);
 
 });
+
+
+app.get('/delete', function(req,res){
+	res.render('delete');
+});
+
+app.post('/delete', function(req,res){
+
+	console.log(req.body);
+
+	try{
+
+		var parameters = process_delete(req.body);
+		var query = build_delete(parameters);
+		db.query(query, function(error, result){
+
+			if(error)
+				throw error;
+			else
+				alert("Successful");
+		});
+
+		res.render('manage');
+
+	}
+	catch(e){
+		console.log("NOOOO BOIIIIIIIII");
+		res.status(404).send("BUIIIIII");
+	}
+
+})
+
+
+
 
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
