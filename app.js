@@ -32,7 +32,6 @@ db.connect();
 
 var min_year;
 var max_year;
-var delete_value = 0;
 
 // gets the least recent year value and most recent year value from the database
 function get_year_range() {
@@ -264,7 +263,7 @@ function build_create(parameters) {
 function process_delete(parameters) {
 
 
-	var value;
+	var value, delete_value, delete_array= [value, delete_value];
 
 	// if()
 	if('show' in parameters){
@@ -298,23 +297,23 @@ function process_delete(parameters) {
 	}
 
 	console.log(value);
-	return value;
+	return delete_array;
 }
 
 function build_delete(parameters){
 
 	var query_text;
 
-	if(delete_value == 1)
-		query_text = 'DELETE FROM public.show WHERE show_id = ' + parameters;
-	else if(delete_value == 2)
-		query_text = 'DELETE FROM public.character WHERE char_id = ' + parameters;
-	else if (delete_value == 3)
-		query_text = 'DELETE FROM public.voice_actor WHERE actor_id = ' + parameters;
-	else if(delete_value == 4)
-		query_text = 'DELETE FROM public.studio WHERE studio_id = ' + parameters;
-	else if(delete_value == 5)
-		query_text = 'DELETE FROM public.season WHERE season_id = ' + parameters;
+	if(parameters[1] == 1)
+		query_text = 'DELETE FROM public.show WHERE show_id = ' + parameters[0];
+	else if(parameters[1] == 2)
+		query_text = 'DELETE FROM public.character WHERE char_id = ' + parameters[0];
+	else if (parameters[1] == 3)
+		query_text = 'DELETE FROM public.voice_actor WHERE actor_id = ' + parameters[0];
+	else if(parameters[1] == 4)
+		query_text = 'DELETE FROM public.studio WHERE studio_id = ' + parameters[0];
+	else if(parameters[1] == 5)
+		query_text = 'DELETE FROM public.season WHERE season_id = ' + parameters[0];
 	else
 		query_text = NULL;
 
