@@ -366,100 +366,13 @@ app.get('/', function (req, res) {
 	res.render('index');
 });
 
-// if index page is requested, find "index.handlebars" in views and show it to user
+// if home page is requested, find "index.handlebars" in views and show it to user
 app.get('/index', function (req, res) {
 	res.render('index');
 });
 
-app.get('/manage', function (req, res) {
-	res.render('manage');
-});
-
-
-app.get('/create', function(req,res){
-	// res.sendFile('create.handlebars', {root: path.join(__dirname, './views')});
-	res.render('create');
-});
-
-app.post('/create', function (req, res) {
-
-console.log(req.body);
-
-	try{
-		var parameters = process_create_parameters(req.body);
-		var query = build_create(parameters);
-	
-		// console.log("query 0: " + query[0]);
-	
-		console.log("inside the try but outside the loop");
-		for (x in query) {
-			console.log("Before query");
-
-
-			db.query(query[x].text,query[x].values, function (error, result) {
-			
-				console.log("inside query loop");
-				if (error) {
-					throw error;
-				} 
-			});
-		}
-		res.render('create');
-	}
-	catch(e){
-	console.log("Hello!");
-	res.status(404).send("Error! boi!");
-
-	}
-
-	// res.end(JSON.stringify(req.body.year));
-	// process_create_parameters(req.body.show);
-
-	// var show_name = req.body.show;
-	// console.log(show_name);
-
-});
-
-
-app.get('/delete', function(req,res){
-	res.render('delete');
-});
-
-app.post('/delete', function(req,res){
-
-	console.log(req.body);
-
-	var parameters = process_delete_parameters(req.body);
-	var query = build_delete_query(parameters);
-	var context;
-	
-	console.log(query);
-	
-	db.query(query, function(error, result) {
-
-		if(error) {
-			context = { message: error };
-			res.render('delete', context);
-		}
-		else {
-			
-			console.log("Query did not fail.");
-			
-			if (result.rowCount <= 0) { context = { message: 'None of the rows in the table have the specified ID.' }; }
-			else if (result.rowCount > 0) { context = { message: 'Number of rows deleted: ' + result.rowCount }; }
-			
-			res.render('delete', context);
-			
-		}
-		
-	});
-
-});
-
-
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
-
 
 	get_year_range(); // update values just in case they have changed, does not matter when this completes
 
@@ -500,11 +413,102 @@ app.get('/browse*', function (req, res, next) {
 
 });
 
+// if page for managing database is requested, find "manage.handlebars" in views and show it to user
+app.get('/manage', function (req, res) {
+	res.render('manage');
+});
+
+// if page for createng rows in the database is requested, find "create.handlebars" in views and show it to user
+app.get('/create', function(req,res){
+	// res.sendFile('create.handlebars', {root: path.join(__dirname, './views')});
+	res.render('create');
+});
+
+// if page for deletiing rows in the database is requested, find "delete.handlebars" in views and show it to user
+app.post('/create', function (req, res) {
+
+console.log(req.body);
+
+	try{
+		var parameters = process_create_parameters(req.body);
+		var query = build_create(parameters);
+	
+		// console.log("query 0: " + query[0]);
+	
+		console.log("inside the try but outside the loop");
+		for (x in query) {
+			console.log("Before query");
+
+
+			db.query(query[x].text,query[x].values, function (error, result) {
+			
+				console.log("inside query loop");
+				if (error) {
+					throw error;
+				} 
+			});
+		}
+		res.render('create');
+	}
+	catch(e){
+	console.log("Hello!");
+	res.status(404).send("Error! boi!");
+
+	}
+
+	// res.end(JSON.stringify(req.body.year));
+	// process_create_parameters(req.body.show);
+
+	// var show_name = req.body.show;
+	// console.log(show_name);
+
+});
+
+
+// if page for deletiing rows in the database is requested, find "delete.handlebars" in views and show it to user
+app.get('/delete', function(req,res){
+	res.render('delete');
+});
+
+// handles POST request from form on delete view 
+app.post('/delete', function(req,res){
+
+	console.log(req.body);
+
+	var parameters = process_delete_parameters(req.body);
+	var query = build_delete_query(parameters);
+	var context;
+	
+	console.log(query);
+	
+	db.query(query, function(error, result) {
+
+		if(error) {
+			context = { message: capitalize_string(error.message) };
+			res.render('delete', context);
+		}
+		else {
+			
+			console.log("Query did not fail.");
+			
+			if (result.rowCount <= 0) { context = { message: 'None of the rows in the table have the specified ID.' }; }
+			else if (result.rowCount > 0) { context = { message: 'Number of rows deleted: ' + result.rowCount }; }
+			
+			res.render('delete', context);
+			
+		}
+		
+	});
+
+});
+
+
 // for anything else, just show 404 error
 app.get('*', function (req, res) {
 	res.status(404);
 	res.render('error404');
 });
+
 
 
 var server = app.listen(port, function () {

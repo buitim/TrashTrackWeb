@@ -1,34 +1,71 @@
-<div class="main manage create">
+<div class="main manage create centered_text fades_in">
 
-
-	<div class="create_input">
-
-
-			<h2>Create</h2>
-
+	<h2>Create New Row In Database</h2>
+	<p>{{message}}</p>
+	
+	<div class="spacing3"></div>
+	
+	<div class="">
+	
 		<form action="/create" method="post">
-
-			Show Name:<input type="text" id="shows" name="show"> <br>
-			Show Character's First Name:<input type="text" id="characters_first" name="char_first" > <br>
-			Show Character's Last Name:<input type="text" id="characters_last" name="char_last"> <br>
-
-			Show Voice Actors First Name:<input type="text" id="voice_actors_first" name="voice_first"> <br>
-			Show Voice Actors Last Name:<input type="text" id="voice_actors_last" name="voice_last"> <br>
-			Show Studio: <input type="text" id="studio" name="studio" > <br>
-
-			Show Year:<input type="text" id="create_year" name="year"><br>
-
-			<br><h3>Seasons</h3><br>
-			<input type="radio" id="fall" name="season" value="fall" name="season"> <label for="fall">Fall</label> <br>
-			<input type="radio" id="winter" name="season" value="winter" name="season"> <label for="winter">Winter</label> <br>
-			<input type="radio" id="spring" name="season" value="spring" name="season"> <label for="spring">Spring</label> <br>
-			<input type="radio" id="summer" name="season" value="summer" name="season"> <label for="summer">Summer</label> <br>
+		
+			<p>Add Character</p>
+			<label>First Name: </label> <input type="text" name="first_name"> <br>
+			<label>Last Name: </label> <input type="text" name="last_name"> <br> 
+			<label>Voice Actor ID: </label> <input type="number" name="actor_id"> <br>
+			<label>Show ID: </label> <input type="number" name="show_id"> <br> 
+			<br> <input class="link_button link_button_thin" type="submit" value="Submit">
 			
-
-			<br> <input type="submit" value="Submit"><br>
+		</form>
+		
+		<br> <br>
+		
+		<form action="/create" method="post">
+		
+			<p>Add Voice Actor</p>
+			<label>First Name: </label> <input type="text" name="first_name"> <br>
+			<label>Last Name: </label> <input type="text" name="last_name"> <br> 
+			<br> <input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+	
+	</div>
+	
+	<br> <br>
+	
+	<div class="">
+		
+		<form action="/create" method="post">
+		
+			<p>Add Show</p>
+			<label>Show Title: </label> <input type="text" name="title"> <br> 
+			<label>Studio ID: </label> <input type="number" name="studio_id"> <br> 
+			<label>Season ID: </label> <input type="number" name="season_id"> <br> 
+			<br> <input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br> <br>
+	
+		<form action="/create" method="post">
+		
+			<p>Add Studio</p>
+			<label>Studio Name: </label> <input type="text" name="studio"> <br> <br>
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br> <br>
+		
+		<form action="/create" method="post">
+		
+			<p>Add Season</p>
+			<label>Season: </label> <input type="text" name="season"> <br>
+			<label>Year: </label> <input type="number" name="year"> <br> <br>
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
 		</form>
 
 	</div>
-
 
 </div>
