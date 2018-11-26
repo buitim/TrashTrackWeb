@@ -378,8 +378,6 @@ console.log(req.body);
 				} 
 			});
 		}
-
-		alert("Successful!");
 		res.render('manage');
 	}
 	catch(e){
@@ -413,8 +411,6 @@ app.post('/delete', function(req,res){
 
 			if(error)
 				throw error;
-			else
-				alert("Successful");
 		});
 
 		res.render('manage');
