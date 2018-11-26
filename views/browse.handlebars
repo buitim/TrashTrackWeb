@@ -10,8 +10,7 @@
 				<input type="radio" id="type_shows" name="type" value="show" checked> <label for="type_shows">Shows</label> <br>
 				<input type="radio" id="type_characters" name="type" value="character"> <label for="type_characters">Characters</label>
 				<br>
-				<input type="radio" id="type_voiceActors" name="type" value="voice_actor"> <label for="type_voiceActors">Voice
-					Actors</label> <br>
+				<input type="radio" id="type_voiceActors" name="type" value="voice_actor"> <label for="type_voiceActors">Voice Actors</label> <br>
 				<input type="radio" id="type_studio" name="type" value="studio"> <label for="type_studio">Studios</label> <br>
 
 				<br>
@@ -28,10 +27,10 @@
 
 				<p class="filter_header">Year</p>
 				<div class="year_group">
-					<input type="number" id="year" name="year" value="{{max_year}}">
+					<input type="number" id="year" name="year" placeholder="{{min_year}} - {{max_year}}">
 				</div>
 
-				<br><br>
+				<br><br><br>
 
 				<input class="link_button" type="submit" value="Submit">
 
@@ -44,8 +43,6 @@
 	</div>
 
 	<div class="browse_results">
-
-		<p>DATABASE QUERY DEBUGGING</p>
 
 		<table>
 		

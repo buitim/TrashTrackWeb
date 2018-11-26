@@ -73,34 +73,18 @@ function capitalize_string(string) {
 
 }
 
-// fixes the column names retrieved from the database to have spaces instead of underscores and proper capitalization
-function fix_headers(headers) {
+// replace underscores in each string of array with spaces`
+function underscores_to_spaces(strings) {
 	
-	var new_headers = [];
+	var new_strings = [];
 	
-	for (x in headers) {
+	for (x in strings) {
 		
-		new_headers.push( capitalize_string(headers[x]) );
-		
-		/* 
-		
-		new_headers[x] = new_headers[x].replace(/_/g, ' ');
-		
-		for (y in new_headers[x]) {
-			
-			if (new_headers[x][y] === ' ') {
-				
-				new_headers[x] = new_headers[x].slice(0, y) + capitalize_string( new_headers[x].slice(y + 1) ); console.log(new_headers[x].slice(0, y) + capitalize_string( new_headers[x].slice(y + 1) ));
-				
-			}
-			
-		}
-		
-		*/
+		new_strings.push( strings[x].replace(/_/g, ' ') ); // replace underscores with space using regular expression, add new string to array of processed strings
 		
 	}
 	
-	return new_headers;
+	return new_strings;
 	
 }
 
@@ -314,7 +298,7 @@ app.get('/browse*', function (req, res, next) {
 
 			var query_results = [], query_headers = [];
 			
-			query_headers = fix_headers( Object.keys(result.rows[0]) ); console.log(query_headers);
+			query_headers = underscores_to_spaces( Object.keys(result.rows[0]) );
 			
 			for (x in result.rows) {
 				query_results.push( Object.values(result.rows[x]) );

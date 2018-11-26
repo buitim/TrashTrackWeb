@@ -58,6 +58,7 @@ body {
 
 a,
 p,
+td,
 h1,
 h2,
 h3,
@@ -110,16 +111,16 @@ table {
 th,
 td {
 	padding: 0.5em;
-	border: 1px white solid;
+	border: 0.1em rgba(255, 255, 255, 0.1) solid;
+	border-radius: 0.25em;
 }
 
 th {
 	color: #02aaff;
+	background-color: rgba(0, 0, 0, 0.1); 
+	text-transform: capitalize;
 }
 
-td {
-	color: white;
-}
 
 /* for debugging database queries */
 
@@ -127,7 +128,6 @@ td {
 #site_banner {
 	display: inline-block;
 	margin: 0 auto;
-
 	-webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.69));
 	filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.69));
 }
@@ -200,6 +200,11 @@ td {
 	margin-left: 0.1em;
 }
 
+#year::placeholder {
+	font-weight: normal;
+	color: rgba(127, 127, 127, 0.5);
+}
+
 input {
 	cursor: pointer;
 }
@@ -228,7 +233,8 @@ input[type=submit] {
 	display: inline-block;
 	width: 79.5%;
 	padding: 2em;
-	border: 1px red dashed;
+	border: 0.1em rgba(255, 255, 255, 0.1) solid;
+	border-radius: 1em;
 }
 
 /* for debugging database queries */
