@@ -263,7 +263,7 @@ function build_create(parameters) {
 function process_delete(parameters) {
 
 
-	var value, delete_value, delete_array= [value, delete_value];
+	var value, delete_value, delete_array= [];
 
 	// if()
 	if('show' in parameters){
@@ -297,6 +297,9 @@ function process_delete(parameters) {
 	}
 
 	console.log(value);
+
+	delete_array.push(value);
+	delete_array.push(delete_value);
 	return delete_array;
 }
 
