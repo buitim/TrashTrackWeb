@@ -409,12 +409,13 @@ app.post('/delete', function(req,res){
 	
 			var parameters = process_delete(req.body);
 			var query = build_delete(parameters);
+			console.log(query);
 	
-			if(query == NULL){
-						res.send("BOI!!! No!");
-						res.render('delete');
-			}
-			else{
+			// if(query == NULL){
+			// 			res.send("BOI!!! No!");
+			// 			res.render('delete');
+			// }
+			// else{
 					db.query(query, function(error, result){
 			
 						if(error)
@@ -423,7 +424,7 @@ app.post('/delete', function(req,res){
 	
 					res.render('delete');
 	
-			}
+			// }
 	
 		}
 		catch(e){
