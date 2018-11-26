@@ -347,6 +347,13 @@ input[type=number]::-webkit-outer-spin-button {
 	float: left;
 }
 
+.admin_submit {
+	display: inline-block;
+	float: left;
+	clear: left;
+	margin-left: 43%;
+}
+
 #admin_submit {
 	display: inline-block;
 	float: left;
