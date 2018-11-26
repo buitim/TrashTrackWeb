@@ -225,44 +225,39 @@ function build_create(parameters) {
 	var query1, query2, query3, query4, query5;
 
 	show_query = 'INSERT INTO public.show (title) VALUES ($1)';
-	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($2,$3)';
-	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($4,$5)';
-	studio_query = 'INSERT INTO public.studio (name) VALUES ($6)';
-	season_query = 'INSERT INTO public.season (year,season) VALUES ($7,$8)';
+	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($1, $2)';
+	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($1, $2)';
+	studio_query = 'INSERT INTO public.studio (name) VALUES ($1)';
+	season_query = 'INSERT INTO public.season (year,season) VALUES ($1, $2)';
 
 	var query_array = [show_query, character_query, voice_query, studio_query, season_query];
 
 	query1 = {
 		text: show_query,
-		values: parameters[0],
-		rowMode: 'array'
+		values: [ parameters[0] ]
 	};
 	query2 = {
 		text: character_query,
-		values: [parameters[1], parameters[2]],
-		rowMode: 'array'
+		values: [ parameters[1], parameters[2] ]
 	};
 	query3 = {
 		text: voice_query,
-		values: [parameters[3], parameters[4]],
-		rowMode: 'array'
+		values: [ parameters[3], parameters[4] ]
 	};
 	query4 = {
 		text: studio_query,
-		values: parameters[5],
-		rowMode: 'array'
+		values: [ parameters[5] ]
 	};
 	query5 = {
 		text: season_query,
-		values: [parameters[6], parameters[7]],
-		rowMode: 'array'
+		values: [ parameters[6], parameters[7] ]
 	};
 
-	var query_values = [query1, query2, query3, query4, query5];
+	var query_array = [ query1, query2, query3, query4, query5 ];
 
 	// console.log("query1: "+ query_values[0].values);
 
-	return query_values;
+	return query_array;
 
 }
 
