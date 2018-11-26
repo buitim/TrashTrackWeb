@@ -260,6 +260,8 @@ function build_create(parameters) {
 
 	var query_values = [query1, query2, query3, query4, query5];
 
+	// console.log("query1: "+ query_values[0].values);
+
 	return query_values;
 
 }
@@ -305,12 +307,14 @@ app.get('/create', function(req,res){
 
 app.post('/create', function (req, res) {
 
+console.log(req.body);
+
 	try{
-		console.log(req.body);
 		var parameters = process_create_parameters(req.body);
 		var query = build_create(parameters);
 	
-		console.log(query);
+		// console.log("query 0: " + query[0]);
+		console.log("query1: "+ query[0]);
 	
 		for (x in query) {
 			db.query(query[x], function (error, result) {
@@ -318,8 +322,6 @@ app.post('/create', function (req, res) {
 				if (error) {
 					throw error;
 				} 
-
-				console.log(" rows currently");
 			});
 		}
 
@@ -327,7 +329,7 @@ app.post('/create', function (req, res) {
 	}
 	catch(e){
 	console.log("Hello!");
-	res.send("Error! boi!");
+	res.status(404).send("Error! boi!");
 
 	}
 
