@@ -296,6 +296,8 @@ function process_delete(parameters) {
 			delete_value = 0;
 			value = '\0';
 	}
+
+	console.log(value);
 	return value;
 }
 
@@ -378,7 +380,7 @@ console.log(req.body);
 				} 
 			});
 		}
-		res.render('manage');
+		res.render('create');
 	}
 	catch(e){
 	console.log("Hello!");
@@ -403,25 +405,35 @@ app.post('/delete', function(req,res){
 
 	console.log(req.body);
 
-	try{
+		try{
+	
+			var parameters = process_delete(req.body);
+			var query = build_delete(parameters);
+	
+			if(query == NULL){
+						res.send("BOI!!! No!");
+						res.render('delete');
+			}
+			else{
+					db.query(query, function(error, result){
+			
+						if(error)
+							throw error;
+					});
+	
+					res.render('delete');
+	
+			}
+	
+		}
+		catch(e){
+			console.log("NOOOO BOIIIIIIIII");
+			var context ={ yes:"Error! BOIIII"};
+			res.render('delete', context);
+		}
+	
 
-		var parameters = process_delete(req.body);
-		var query = build_delete(parameters);
-		db.query(query, function(error, result){
-
-			if(error)
-				throw error;
-		});
-
-		res.render('manage');
-
-	}
-	catch(e){
-		console.log("NOOOO BOIIIIIIIII");
-		res.status(404).send("BUIIIIII");
-	}
-
-})
+});
 
 
 
