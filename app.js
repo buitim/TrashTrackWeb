@@ -5,13 +5,17 @@ var handlebars = require('handlebars'); // handlebars is a template system we wi
 
 var app = express();
 app.set('view engine', 'handlebars');
-app.engine('handlebars', express_handlebars({ defaultLayout: 'main' }));
+app.engine('handlebars', express_handlebars({
+	defaultLayout: 'main'
+}));
 app.use(express.static('public'));
 
 
 // connect to heroku postgres database using example code from heroku
 
-const { Client } = require('pg');
+const {
+	Client
+} = require('pg');
 
 var db = new Client({
 
@@ -75,17 +79,17 @@ function capitalize_string(string) {
 
 // replace underscores in each string of array with spaces`
 function underscores_to_spaces(strings) {
-	
+
 	var new_strings = [];
-	
+
 	for (x in strings) {
-		
-		new_strings.push( strings[x].replace(/_/g, ' ') ); // replace underscores with space using regular expression, add new string to array of processed strings
-		
+
+		new_strings.push(strings[x].replace(/_/g, ' ')); // replace underscores with space using regular expression, add new string to array of processed strings
+
 	}
-	
+
 	return new_strings;
-	
+
 }
 
 
@@ -143,37 +147,39 @@ function process_browse_parameters(parameters) {
 // constructs query for database using array of strings as parameters
 function build_browse_query(parameters) {
 
-	var query_text, query_values = [], query;
+	var query_text, query_values = [],
+		query;
 
 	query_text = 'SELECT * FROM public.' + parameters[0] + '_view';
-	
+
 	if (parameters[1] != 'any' && parameters[2] != 'any') {
-		
+
 		query_text = query_text + ' WHERE season = $1 AND year = $2';
-		query_values.push( capitalize_string(parameters[1]) , parameters[2] ); // add value of $1 and $2 to the list
+		query_values.push(capitalize_string(parameters[1]), parameters[2]); // add value of $1 and $2 to the list
 
-	}
-	else if (parameters[1] != 'any' || parameters[2] != 'any') {
-		
+	} else if (parameters[1] != 'any' || parameters[2] != 'any') {
+
 		query_text = query_text + ' WHERE ';
-			
-		if ( parameters[1] != 'any' ) {
-				
-			query_text = query_text + 'season = $1'
-			query_values.push( capitalize_string(parameters[1]) );
-			
-		}
-		else {
-			
-			query_text = query_text + 'year = $1'
-			query_values.push( parameters[2] );
-			
-		}
-	
-	}
-	
 
-	query = { text: query_text, values: query_values };
+		if (parameters[1] != 'any') {
+
+			query_text = query_text + 'season = $1'
+			query_values.push(capitalize_string(parameters[1]));
+
+		} else {
+
+			query_text = query_text + 'year = $1'
+			query_values.push(parameters[2]);
+
+		}
+
+	}
+
+
+	query = {
+		text: query_text,
+		values: query_values
+	};
 
 	return query;
 
@@ -276,6 +282,10 @@ app.get('/manage', function (req, res) {
 	res.render('manage');
 });
 
+app.get('/update', function (req, res) {
+	res.render('update');
+});
+
 app.get('/create', function (req, res) {
 
 	var parameters = process_create_parameters(req.query);
@@ -315,12 +325,13 @@ app.get('/browse*', function (req, res, next) {
 
 			console.log("Query done!");
 
-			var query_results = [], query_headers = [];
-			
-			query_headers = underscores_to_spaces( Object.keys(result.rows[0]) );
-			
+			var query_results = [],
+				query_headers = [];
+
+			query_headers = underscores_to_spaces(Object.keys(result.rows[0]));
+
 			for (x in result.rows) {
-				query_results.push( Object.values(result.rows[x]) );
+				query_results.push(Object.values(result.rows[x]));
 			}
 
 			var context = {
@@ -329,7 +340,7 @@ app.get('/browse*', function (req, res, next) {
 				headers: query_headers,
 				results: query_results
 			};
-			
+
 			res.render('browse', context);
 
 		}
