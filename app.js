@@ -5,7 +5,9 @@ var handlebars = require('handlebars'); // handlebars is a template system we wi
 
 var app = express();
 app.set('view engine', 'handlebars');
-app.engine('handlebars', express_handlebars({ defaultLayout: 'main' }));
+app.engine('handlebars', express_handlebars({
+	defaultLayout: 'main'
+}));
 app.use(express.static('public'));
 
 
@@ -19,7 +21,9 @@ var path = require('path');
 
 // connect to heroku postgres database using example code from heroku
 
-const { Client } = require('pg');
+const {
+	Client
+} = require('pg');
 
 var db = new Client({
 
@@ -95,36 +99,21 @@ function capitalize_string(string) {
 
 }
 
-// fixes the column names retrieved from the database to have spaces instead of underscores and proper capitalization
-function fix_headers(headers) {
-	
-	var new_headers = [];
-	
-	for (x in headers) {
-		
-		new_headers.push( capitalize_string(headers[x]) );
-		
-		/* 
-		
-		new_headers[x] = new_headers[x].replace(/_/g, ' ');
-		
-		for (y in new_headers[x]) {
-			
-			if (new_headers[x][y] === ' ') {
-				
-				new_headers[x] = new_headers[x].slice(0, y) + capitalize_string( new_headers[x].slice(y + 1) ); console.log(new_headers[x].slice(0, y) + capitalize_string( new_headers[x].slice(y + 1) ));
-				
-			}
-			
-		}
-		
-		*/
-		
+// replace underscores in each string of array with spaces`
+function underscores_to_spaces(strings) {
+
+	var new_strings = [];
+
+	for (x in strings) {
+
+		new_strings.push(strings[x].replace(/_/g, ' ')); // replace underscores with space using regular expression, add new string to array of processed strings
+
 	}
-	
-	return new_headers;
-	
+
+	return new_strings;
+
 }
+
 
 // checks query parameters and returns a list of valid values
 function process_browse_parameters(parameters) {
@@ -164,11 +153,11 @@ function process_browse_parameters(parameters) {
 		if (parameters.year >= min_year && parameters.year <= max_year) {
 			year = parameters.year;
 		} else {
-			year = max_year;
+			year = 'any';
 		}
 
 	} else {
-		year = max_year;
+		year = 'any';
 	}
 
 	console.log([type, season, year]);
@@ -180,19 +169,39 @@ function process_browse_parameters(parameters) {
 // constructs query for database using array of strings as parameters
 function build_browse_query(parameters) {
 
-	var query_text, query_values = [], query;
+	var query_text, query_values = [],
+		query;
 
-	query_text = 'SELECT * FROM public.' + parameters[0] + '_view WHERE year = $1';
-	query_values.push(parameters[2]); // add value of $1 to the list
+	query_text = 'SELECT * FROM public.' + parameters[0] + '_view';
 
-	if (parameters[1] != 'any') {
+	if (parameters[1] != 'any' && parameters[2] != 'any') {
 
-		query_text = query_text + ' AND season = $2'; // add another condition for WHERE if a particular season was specified
-		query_values.push(capitalize_string(parameters[1])); // add the value of $2 to the list
+		query_text = query_text + ' WHERE season = $1 AND year = $2';
+		query_values.push(capitalize_string(parameters[1]), parameters[2]); // add value of $1 and $2 to the list
+
+	} else if (parameters[1] != 'any' || parameters[2] != 'any') {
+
+		query_text = query_text + ' WHERE ';
+
+		if (parameters[1] != 'any') {
+
+			query_text = query_text + 'season = $1'
+			query_values.push(capitalize_string(parameters[1]));
+
+		} else {
+
+			query_text = query_text + 'year = $1'
+			query_values.push(parameters[2]);
+
+		}
 
 	}
 
-	query = { text: query_text, values: query_values };
+
+	query = {
+		text: query_text,
+		values: query_values
+	};
 
 	return query;
 
@@ -371,6 +380,12 @@ app.get('/index', function (req, res) {
 	res.render('index');
 });
 
+
+app.get('/update', function (req, res) {
+	res.render('update');
+});
+
+
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
 
@@ -390,12 +405,13 @@ app.get('/browse*', function (req, res, next) {
 
 			console.log("Query done!");
 
-			var query_results = [], query_headers = [];
-			
-			query_headers = fix_headers( Object.keys(result.rows[0]) ); console.log(query_headers);
-			
+			var query_results = [],
+				query_headers = [];
+
+			query_headers = underscores_to_spaces(Object.keys(result.rows[0]));
+
 			for (x in result.rows) {
-				query_results.push( Object.values(result.rows[x]) );
+				query_results.push(Object.values(result.rows[x]));
 			}
 
 			var context = {
@@ -404,7 +420,7 @@ app.get('/browse*', function (req, res, next) {
 				headers: query_headers,
 				results: query_results
 			};
-			
+
 			res.render('browse', context);
 
 		}
@@ -508,7 +524,6 @@ app.get('*', function (req, res) {
 	res.status(404);
 	res.render('error404');
 });
-
 
 
 var server = app.listen(port, function () {
