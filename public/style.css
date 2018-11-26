@@ -111,6 +111,7 @@ th,
 td {
 	padding: 0.5em;
 	border: 0.1em rgba(255, 255, 255, 0.1) solid;
+	border-radius: 0.25em;
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 12pt;
 }
@@ -170,7 +171,7 @@ th {
 }
 
 .filter_header {
-	border-bottom: 1px solid #02aaff;
+	border-bottom: 0.1em solid #02aaff;
 	padding-bottom: 0.5em;
 	font-weight: bolder;
 }
@@ -237,6 +238,8 @@ input[type=submit] {
 	display: inline-block;
 	width: 79.5%;
 	padding: 2em;
+	border: 0.1em rgba(255, 255, 255, 0.1) solid;
+	border-radius: 1em;
 }
 
 
