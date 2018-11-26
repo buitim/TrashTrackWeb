@@ -204,7 +204,7 @@ function process_create_parameters(parameters){
 	}
 
 	year = parameters.year;
-	name = parameters.title;
+	name = parameters.show;
 	character_first = parameters.char_first;
 	character_last = parameters.char_last;
 	voice_first = parameters.voice_first;
@@ -212,7 +212,7 @@ function process_create_parameters(parameters){
 	studio = parameters.studio;
 	season = parameters.season;
 
-	console.log(parameters.year);
+	console.log(parameters.show);
 
 	return [name,character_first,character_last,voice_first,voice_last,studio,year,season];
 
@@ -317,12 +317,13 @@ app.post('/create', function (req, res) {
 	
 				if (error) {
 					throw error;
-				} else {
-					// res.render('create',query[x]);
-					res.send("Work");
-				}
+				} 
+
+				console.log(" rows currently");
 			});
 		}
+
+		alert("Successful!");
 	}
 	catch(e){
 	console.log("Hello!");
@@ -335,7 +336,6 @@ app.post('/create', function (req, res) {
 
 	// var show_name = req.body.show;
 	// console.log(show_name);
-	// res.render('create');
 
 });
 
