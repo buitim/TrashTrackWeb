@@ -11,6 +11,14 @@ app.engine('handlebars', express_handlebars({
 app.use(express.static('public'));
 
 
+//for parsing data
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var path = require('path');
+
+
 // connect to heroku postgres database using example code from heroku
 
 const {
@@ -53,6 +61,20 @@ function get_year_range() {
 
 get_year_range();
 
+
+// check if string contains only digits and thus is semantically same as an integer
+function is_integer(string) {
+	
+	if (string.length === 0) { return false; }
+	
+	for (x in string) {
+		
+		if (string[x] < '0' || string[x] > '9') { return false; }
+		
+	}
+	
+	return true;
+}
 
 // compares value to list of values, returns true if it matches any or false if it matches none
 function compare_values(value, list) {
@@ -186,79 +208,159 @@ function build_browse_query(parameters) {
 }
 
 
-// function process_create_query(parameters){
+function process_create_parameters(parameters){
 
-// 	var year, name, character_first, character_last, voice_first, voice_last, season, studio;
+	var year, name, character_first, character_last, voice_first, voice_last, season, studio;
 
-// 	console.log(parameters);
+	// console.log(parameters);
 
-// 	// if ('title' in parameters){
-// 	// 	if(parameters.title )
+	// if ('title' in parameters){
+	// 	if(parameters.title )
 
-// 	// }
-// 	// if('year')
-// 	year = parameters.year;
-// 	name = parameters.title;
-// 	character_first = parameters.
+	// }
+	// if('year')
+	// year = parameters.year;
+	// name = parameters.title;
+	// character_first = parameters.
+	for(x in parameters){
+		if(parameters[x] == '\0')
+			parameters[x] = NULL;
+	}
+
+	year = parameters.year;
+	name = parameters.show;
+	character_first = parameters.char_first;
+	character_last = parameters.char_last;
+	voice_first = parameters.voice_first;
+	voice_last = parameters.voice_last;
+	studio = parameters.studio;
+	season = parameters.season;
+
+	return [name,character_first,character_last,voice_first,voice_last,studio,year,season];
 
 
-// }
+}
 
-function build_create(parameters) {
+function build_create_query(parameters) {
 
 	var show_query, season_query, character_query, studio_query, voice_query;
 	var query1, query2, query3, query4, query5;
 
 	show_query = 'INSERT INTO public.show (title) VALUES ($1)';
-	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($2,$3)';
-	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($4,$5)';
-	studio_query = 'INSERT INTO public.studio (name) VALUES ($6)';
-	season_query = 'INSERT INTO public.season (year,season) VALUES ($7,$8)';
+	character_query = 'INSERT INTO public.character (first_name,last_name) VALUES ($1, $2)';
+	voice_query = 'INSERT INTO public.voice_actor (first_name,last_name) VALUES ($1, $2)';
+	studio_query = 'INSERT INTO public.studio (name) VALUES ($1)';
+	season_query = 'INSERT INTO public.season (year,season) VALUES ($1, $2)';
 
 	var query_array = [show_query, character_query, voice_query, studio_query, season_query];
 
 	query1 = {
 		text: show_query,
-		values: parameters[0],
-		rowMode: 'array'
+		values: [ parameters[0] ]
 	};
 	query2 = {
 		text: character_query,
-		values: [parameters[1], parameters[2]],
-		rowMode: 'array'
+		values: [ parameters[1], parameters[2] ]
 	};
 	query3 = {
 		text: voice_query,
-		values: [parameters[3], parameters[4]],
-		rowMode: 'array'
+		values: [ parameters[3], parameters[4] ]
 	};
 	query4 = {
 		text: studio_query,
-		values: parameters[5],
-		rowMode: 'array'
+		values: [ parameters[5] ]
 	};
 	query5 = {
 		text: season_query,
-		values: [parameters[6], parameters[7]],
-		rowMode: 'array'
+		values: [ parameters[6], parameters[7] ]
 	};
 
-	var query_values = [query1, query2, query3, query4, query5];
+	var query_array = [ query1, query2, query3, query4, query5 ];
 
-	return query_values;
+	// console.log("query1: "+ query_values[0].values);
 
-}
-
-
-function build_delete(parameters) {
+	return query_array;
 
 }
 
 
-function build_update(parameters) {
+// checks input from POST request form and returns list of valid parameters for delete operation on database
+function process_delete_parameters(parameters) {
 
+	var table, id, delete_parameters = []; // row with specified id will be deleted from the specified table
+
+	// check for table name and check if id value is valid
+	
+	if ('show' in parameters && is_integer(parameters.show) === true) {
+		id = parameters.show;
+		table = 1;
+	}
+	else if ('character' in parameters && is_integer(parameters.character) === true) {
+		id = parameters.character;
+		table = 2;
+	}
+	else if ('voice_actor' in parameters && is_integer(parameters.voice_actor) === true) {
+		id = parameters.voice_actor;
+		table = 3;
+	}
+	else if ('studio' in parameters && is_integer(parameters.studio) === true) {
+		id = parameters.studio;
+		table = 4;
+	}
+	else if ('season' in parameters && is_integer(parameters.season) === true) {
+		id = parameters.season;
+		table = 5;
+	}
+	else {
+		id = -1;
+		table = -1;
+	}
+
+	console.log(table, id);
+
+	delete_parameters = [ table, id ];
+	return delete_parameters;
+	
 }
 
+// constructs query for database using array of strings as parameters
+function build_delete_query(parameters) {
+
+	var query_text;
+
+	// check table number from given parameters and make a query that targets the correct table and column
+	
+	switch( parameters[0] ) {
+		
+		case 1:
+			query_text = 'DELETE FROM public.show WHERE show_id = ' + parameters[1];
+			break;
+			
+		case 2:
+			query_text = 'DELETE FROM public.character WHERE char_id = ' + parameters[1];
+			break;
+		
+		case 3:
+			query_text = 'DELETE FROM public.voice_actor WHERE actor_id = ' + parameters[1];
+			break;
+		
+		case 4: 
+			query_text = 'DELETE FROM public.studio WHERE studio_id = ' + parameters[1];
+			break;
+
+		case 5:
+			query_text = 'DELETE FROM public.season WHERE season_id = ' + parameters[1];
+			break;
+			
+		default:
+			query_text = '';
+			break;
+			
+	}
+	
+	return query_text;
+	
+}
 
 
 // set the port of our application
@@ -273,38 +375,16 @@ app.get('/', function (req, res) {
 	res.render('index');
 });
 
-// if index page is requested, find "index.handlebars" in views and show it to user
+// if home page is requested, find "index.handlebars" in views and show it to user
 app.get('/index', function (req, res) {
 	res.render('index');
 });
 
-app.get('/manage', function (req, res) {
-	res.render('manage');
-});
 
 app.get('/update', function (req, res) {
 	res.render('update');
 });
 
-app.get('/create', function (req, res) {
-
-	var parameters = process_create_parameters(req.query);
-	var query = build_create(parameters);
-
-	console.log(query);
-
-	for (x in query) {
-		db.query(query[x], function (error, result) {
-
-			if (error) {
-				throw error;
-			} else {
-				res.render('create');
-			}
-		});
-	}
-
-});
 
 // handles any queries user makes through the limited front end interface
 app.get('/browse*', function (req, res, next) {
@@ -348,6 +428,96 @@ app.get('/browse*', function (req, res, next) {
 	});
 
 });
+
+// if page for managing database is requested, find "manage.handlebars" in views and show it to user
+app.get('/manage', function (req, res) {
+	res.render('manage');
+});
+
+// if page for createng rows in the database is requested, find "create.handlebars" in views and show it to user
+app.get('/create', function(req,res){
+	// res.sendFile('create.handlebars', {root: path.join(__dirname, './views')});
+	res.render('create');
+});
+
+// if page for deletiing rows in the database is requested, find "delete.handlebars" in views and show it to user
+app.post('/create', function (req, res) {
+
+console.log(req.body);
+
+	try{
+		var parameters = process_create_parameters(req.body);
+		var query = build_create(parameters);
+	
+		// console.log("query 0: " + query[0]);
+	
+		console.log("inside the try but outside the loop");
+		for (x in query) {
+			console.log("Before query");
+
+
+			db.query(query[x].text,query[x].values, function (error, result) {
+			
+				console.log("inside query loop");
+				if (error) {
+					throw error;
+				} 
+			});
+		}
+		res.render('create');
+	}
+	catch(e){
+	console.log("Hello!");
+	res.status(404).send("Error! boi!");
+
+	}
+
+	// res.end(JSON.stringify(req.body.year));
+	// process_create_parameters(req.body.show);
+
+	// var show_name = req.body.show;
+	// console.log(show_name);
+
+});
+
+
+// if page for deletiing rows in the database is requested, find "delete.handlebars" in views and show it to user
+app.get('/delete', function(req,res){
+	res.render('delete');
+});
+
+// handles POST request from form on delete view 
+app.post('/delete', function(req,res){
+
+	console.log(req.body);
+
+	var parameters = process_delete_parameters(req.body);
+	var query = build_delete_query(parameters);
+	var context;
+	
+	console.log(query);
+	
+	db.query(query, function(error, result) {
+
+		if(error) {
+			context = { message: capitalize_string(error.message) };
+			res.render('delete', context);
+		}
+		else {
+			
+			console.log("Query did not fail.");
+			
+			if (result.rowCount <= 0) { context = { message: 'None of the rows in the table have the specified ID.' }; }
+			else if (result.rowCount > 0) { context = { message: 'Number of rows deleted: ' + result.rowCount }; }
+			
+			res.render('delete', context);
+			
+		}
+		
+	});
+
+});
+
 
 // for anything else, just show 404 error
 app.get('*', function (req, res) {
