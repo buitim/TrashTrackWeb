@@ -423,7 +423,7 @@ app.post('/delete', function(req,res){
 							res.render('delete', context);
 						}
 					});
-	
+					console.log("works");
 					res.render('delete');
 	
 			// }
