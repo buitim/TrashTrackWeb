@@ -404,7 +404,7 @@ app.post('/delete', function(req,res){
 
 	console.log(req.body);
 
-		try{
+		// try{
 	
 			var parameters = process_delete(req.body);
 			var query = build_delete(parameters);
@@ -415,27 +415,27 @@ app.post('/delete', function(req,res){
 			// 			res.render('delete');
 			// }
 			// else{
-					db.query(query, function(error, result){
-			
-						if(error){
-							var context ={ yes:"Error! BOIIII"};
-							res.render('delete', context);
-						}
-						else{
-							console.log("works");
-							res.render('delete');
-						}
-					});
+			db.query(query, function(error, result){
+	
+				if(error){
+					var context ={ yes:"Error! BOIIII"};
+					res.render('delete', context);
+				}
+				else{
+					console.log("works");
+					res.render('delete');
+				}
+			});
 
 	
 			// }
 	
-		}
-		catch(e){
-			console.log("NOOOO BOIIIIIIIII");
-			res.status(404).send("broken");
+		// }
+		// catch(e){
+		// 	console.log("NOOOO BOIIIIIIIII");
+		// 	res.status(404).send("broken");
 
-		}
+		// }
 	
 
 });
