@@ -422,9 +422,12 @@ app.post('/delete', function(req,res){
 							var context ={ yes:"Error! BOIIII"};
 							res.render('delete', context);
 						}
+						else{
+							console.log("works");
+							res.render('delete');
+						}
 					});
-					console.log("works");
-					res.render('delete');
+
 	
 			// }
 	
