@@ -231,8 +231,6 @@ input[type=submit] {
 	border: 1px red dashed;
 }
 
-/* for debugging database queries */
-
 .browse_options input {
 	margin: 0;
 	margin-bottom: 0.5em;
@@ -244,7 +242,14 @@ input[type=submit] {
 	text-align: center;
 }
 
-/* for debugging database queries */
+
+.manage_options {
+	display: inline-block;
+	border: 0.1em gray solid;
+	border-radius: 1em;
+	padding: 2em;
+	text-align: left;
+}
 
 
 .nav {

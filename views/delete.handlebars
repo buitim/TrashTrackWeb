@@ -1,73 +1,55 @@
-<div class="main manage delete">
+<div class="main manage delete centered_text fades_in">
 
-
-	<div class="user_delete">
-
-
-			<h2>Delete</h2>
-			<h3>{{yes}}</h3>
-
+	<h2>Delete Row From Database</h2>
+	<p>{{message}}</p>
+	
+	<div class="spacing3"></div>
+	
+	<div class="manage_options"> 
+	
 		<form action="/delete" method="post">
-
-
-
-			<label for="show_id">Show ID:</label> <input type="number" name="show"><br>
-
-
-
-
-			<br> <input type="submit" value="Submit"><br><br>
+		
+			<label for="show_id">Show ID:</label> <input type="number" name="show">
+			<input type="submit" value="Submit">
+			
 		</form>
-
-
+		
+		<br>
+		
 		<form action="/delete" method="post">
-
-
-
-			<label for="char_id">Character ID: </label> <input type="number" name="char"> <br>
-
-
-
-
-			<br> <input type="submit" value="Submit"><br><br>
+			
+			<label for="char_id">Character ID: </label> <input type="number" name="character">
+			<input type="submit" value="Submit">
+			
 		</form>
-
-
+		
+		<br>
+		
 		<form action="/delete" method="post">
-
-
-			<label for="voice_id">Voice Actor ID: </label> <input type="number" name="voice"> <br>
-
-
-
-			<br> <input type="submit" value="Submit"><br><br>
+			
+			<label for="voice_id">Voice Actor ID: </label> <input type="number" name="voice_actor">
+			<input type="submit" value="Submit">
+			
 		</form>
-
-
+		
+		<br>
+		
 		<form action="/delete" method="post">
-
-
-
-			<label for="studio_id">Studio ID: </label> <input type="number" name="studio" > <br>
-
-
-
-			<br> <input type="submit" value="Submit"><br><br>
+		
+			<label for="studio_id">Studio ID: </label> <input type="number" name="studio">
+			<input type="submit" value="Submit">
+			
 		</form>
-
+		
+		<br>
+		
 		<form action="/delete" method="post">
-
-
-
-			<label for="season_id">Season ID: </label> <input type="number" name="season" > <br>
-
-
-
-			<br> <input type="submit" value="Submit"><br><br>
+		
+			<label for="season_id">Season ID: </label> <input type="number" name="season">
+			<input type="submit" value="Submit">
+			
 		</form>
-
-
+	
 	</div>
-
 
 </div>

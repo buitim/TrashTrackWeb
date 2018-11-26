@@ -9,10 +9,11 @@ app.engine('handlebars', express_handlebars({ defaultLayout: 'main' }));
 app.use(express.static('public'));
 
 
-//Parsing data
+//for parsing data
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 var path = require('path');
 
 
@@ -56,6 +57,20 @@ function get_year_range() {
 
 get_year_range();
 
+
+// check if string contains only digits and thus is semantically same as an integer
+function is_integer(string) {
+	
+	if (string.length === 0) { return false; }
+	
+	for (x in string) {
+		
+		if (string[x] < '0' || string[x] > '9') { return false; }
+		
+	}
+	
+	return true;
+}
 
 // compares value to list of values, returns true if it matches any or false if it matches none
 function compare_values(value, list) {
@@ -217,7 +232,7 @@ function process_create_parameters(parameters){
 
 }
 
-function build_create(parameters) {
+function build_create_query(parameters) {
 
 	var show_query, season_query, character_query, studio_query, voice_query;
 	var query1, query2, query3, query4, query5;
@@ -260,76 +275,83 @@ function build_create(parameters) {
 }
 
 
-function process_delete(parameters) {
+// checks input from POST request form and returns list of valid parameters for delete operation on database
+function process_delete_parameters(parameters) {
 
+	var table, id, delete_parameters = []; // row with specified id will be deleted from the specified table
 
-	var value, delete_value, delete_array= [];
-
-	// if()
-	if('show' in parameters){
-			value = parameters.show;
-			delete_value = 1;
+	// check for table name and check if id value is valid
+	
+	if ('show' in parameters && is_integer(parameters.show) === true) {
+		id = parameters.show;
+		table = 1;
+	}
+	else if ('character' in parameters && is_integer(parameters.character) === true) {
+		id = parameters.character;
+		table = 2;
+	}
+	else if ('voice_actor' in parameters && is_integer(parameters.voice_actor) === true) {
+		id = parameters.voice_actor;
+		table = 3;
+	}
+	else if ('studio' in parameters && is_integer(parameters.studio) === true) {
+		id = parameters.studio;
+		table = 4;
+	}
+	else if ('season' in parameters && is_integer(parameters.season) === true) {
+		id = parameters.season;
+		table = 5;
+	}
+	else {
+		id = -1;
+		table = -1;
 	}
 
-	else if ('char' in parameters){
-			value = parameters.char;
-			delete_value = 2;
-	}
+	console.log(table, id);
 
-	else if ('voice' in parameters){
-			value = parameters.voice;
-			delete_value = 3;
-	}
-
-	else if ('studio' in parameters){
-			value = parameters.studio;
-			delete_value = 4;
-	}
-
-	else if ('season' in parameters){
-			value = parameters.season;
-			delete_value = 5;
-	}
-
-	else{
-			delete_value = 0;
-			value = '\0';
-	}
-
-	console.log(value);
-
-	delete_array.push(value);
-	delete_array.push(delete_value);
-	return delete_array;
+	delete_parameters = [ table, id ];
+	return delete_parameters;
+	
 }
 
-function build_delete(parameters){
+// constructs query for database using array of strings as parameters
+function build_delete_query(parameters) {
 
 	var query_text;
 
-	if(parameters[1] == 1)
-		query_text = 'DELETE FROM public.show WHERE show_id = ' + parameters[0];
-	else if(parameters[1] == 2)
-		query_text = 'DELETE FROM public.character WHERE char_id = ' + parameters[0];
-	else if (parameters[1] == 3)
-		query_text = 'DELETE FROM public.voice_actor WHERE actor_id = ' + parameters[0];
-	else if(parameters[1] == 4)
-		query_text = 'DELETE FROM public.studio WHERE studio_id = ' + parameters[0];
-	else if(parameters[1] == 5)
-		query_text = 'DELETE FROM public.season WHERE season_id = ' + parameters[0];
-	else
-		query_text = NULL;
+	// check table number from given parameters and make a query that targets the correct table and column
+	
+	switch( parameters[0] ) {
+		
+		case 1:
+			query_text = 'DELETE FROM public.show WHERE show_id = ' + parameters[1];
+			break;
+			
+		case 2:
+			query_text = 'DELETE FROM public.character WHERE char_id = ' + parameters[1];
+			break;
+		
+		case 3:
+			query_text = 'DELETE FROM public.voice_actor WHERE actor_id = ' + parameters[1];
+			break;
+		
+		case 4: 
+			query_text = 'DELETE FROM public.studio WHERE studio_id = ' + parameters[1];
+			break;
 
+		case 5:
+			query_text = 'DELETE FROM public.season WHERE season_id = ' + parameters[1];
+			break;
+			
+		default:
+			query_text = '';
+			break;
+			
+	}
+	
 	return query_text;
+	
 }
-
-
-
-
-function build_update(parameters) {
-
-}
-
 
 
 // set the port of our application
@@ -407,43 +429,32 @@ app.post('/delete', function(req,res){
 
 	console.log(req.body);
 
-		// try{
+	var parameters = process_delete_parameters(req.body);
+	var query = build_delete_query(parameters);
+	var context;
 	
-			var parameters = process_delete(req.body);
-			var query = build_delete(parameters);
-			console.log(query);
+	console.log(query);
 	
-			// if(query == NULL){
-			// 			res.send("BOI!!! No!");
-			// 			res.render('delete');
-			// }
-			// else{
-			db.query(query, function(error, result){
-	
-				if(error){
-					var context ={ yes:"Error! BOIIII"};
-					res.render('delete', context);
-				}
-				else{
-					console.log("works");
-					res.render('delete');
-				}
-			});
+	db.query(query, function(error, result) {
 
-	
-			// }
-	
-		// }
-		// catch(e){
-		// 	console.log("NOOOO BOIIIIIIIII");
-		// 	res.status(404).send("broken");
-
-		// }
-	
+		if(error) {
+			context = { message: error };
+			res.render('delete', context);
+		}
+		else {
+			
+			console.log("Query did not fail.");
+			
+			if (result.rowCount <= 0) { context = { message: 'None of the rows in the table have the specified ID.' }; }
+			else if (result.rowCount > 0) { context = { message: 'Number of rows deleted: ' + result.rowCount }; }
+			
+			res.render('delete', context);
+			
+		}
+		
+	});
 
 });
-
-
 
 
 // handles any queries user makes through the limited front end interface
