@@ -418,8 +418,10 @@ app.post('/delete', function(req,res){
 			// else{
 					db.query(query, function(error, result){
 			
-						if(error)
-							throw error;
+						if(error){
+							var context ={ yes:"Error! BOIIII"};
+							res.render('delete', context);
+						}
 					});
 	
 					res.render('delete');
@@ -429,8 +431,8 @@ app.post('/delete', function(req,res){
 		}
 		catch(e){
 			console.log("NOOOO BOIIIIIIIII");
-			var context ={ yes:"Error! BOIIII"};
-			res.render('delete', context);
+			res.status(404).send("broken");
+
 		}
 	
 
