@@ -9,6 +9,13 @@ app.engine('handlebars', express_handlebars({ defaultLayout: 'main' }));
 app.use(express.static('public'));
 
 
+//Parsing data
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+var path = require('path');
+
+
 // connect to heroku postgres database using example code from heroku
 
 const { Client } = require('pg');
@@ -196,8 +203,20 @@ function process_create_parameters(parameters){
 			parameters[x] = NULL;
 	}
 
+	year = parameters.year;
+	name = parameters.title;
+	character_first = parameters.char_first;
+	character_last = parameters.char_last;
+	voice_first = parameters.voice_first;
+	voice_last = parameters.voice_last;
+	studio = parameters.studio;
+	season = parameters.season;
 
-	console.log(parameters);
+	console.log(parameters.year);
+
+	return [name,character_first,character_last,voice_first,voice_last,studio,year,season];
+
+
 }
 
 function build_create(parameters) {
@@ -278,26 +297,40 @@ app.get('/manage', function (req, res) {
 	res.render('manage');
 });
 
-app.get('/create', function (req, res) {
 
-	var parameters = process_create_parameters(req.body);
-	var query = build_create(parameters);
+app.get('/create', function(req,res){
+	// res.sendFile('create.handlebars', {root: path.join(__dirname, './views')});
+	res.render('create');
+});
 
-	console.log(query);
+app.post('/create', function (req, res) {
 
-	for (x in query) {
-		db.query(query[x], function (error, result) {
+	try{
+		console.log(req.body);
+		var parameters = process_create_parameters(req.body);
+		var query = build_create(parameters);
+	
+		console.log(query);
+	
+		for (x in query) {
+			db.query(query[x], function (error, result) {
+	
+				if (error) {
+					throw error;
+				} else {
+					// res.render('create',query[x]);
+					res.send("Work");
+				}
+			});
+		}
+	}
+	catch(e){
+	console.log("Hello!");
+	res.send("Error! boi!");
 
-			if (error) {
-				throw error;
-			} else {
-				res.render('create',query[x]);
-			}
-		});
 	}
 
-	console.log("Hello!");
-
+	// res.end(JSON.stringify(req.body.year));
 	// process_create_parameters(req.body.show);
 
 	// var show_name = req.body.show;
