@@ -5,81 +5,75 @@
 
 	<div class="spacing3"></div>
 
-	<div class="admin-toolpanel">
+	<div class="admin_panel">
 
 		<form action="/create" method="post">
-
-			<input type="radio" name="table" value="character"  checked><p>Add Character</p>
-			<label>First Name: </label> <input type="text" name="first_name"> <br>
-			<label>Last Name: </label> <input type="text" name="last_name"> <br>
-			<label>Voice Actor ID: </label> <input type="number" name="actor_id"> <br>
-			<label>Show ID: </label> <input type="number" name="show_id"> <br>
-
-			<div class="admin_submit">
-				<input class="link_button link_button_thin" type="submit" value="Submit">
-			</div>
+			
+			<input type="radio" name="table" value="character" checked> 
+			<p class="bold_text">Add Character</p>
+			
+			<input type="text" name="first_name" placeholder="First Name">
+			<input type="text" name="last_name" placeholder="Last Name">
+			<input type="number" name="actor_id" placeholder="Voice Actor ID">
+			<input type="number" name="show_id" placeholder="Show ID"> 
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
+		
+		<br>
 
-		<br> <br> <br> <br> <br>
+		<form action="/create" method="post">
+	
+			<input type="radio" name="table" value="voice_actor" checked> 
+			<p class="bold_text">Add Voice Actor</p>
+			
+			<input type="text" name="first_name" placeholder="First Name">
+			<input type="text" name="last_name" placeholder="Last Name">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br>
 
 		<form action="/create" method="post">
 
-			<input type="radio" name="table" value="voice_actor" checked><p>Add Voice Actor</p>
-			<label>First Name: </label> <input type="text" name="first_name"> <br>
-			<label>Last Name: </label> <input type="text" name="last_name">
-
-			<div class="spacing2"></div>
-
-			<div class="admin_submit">
-				<input class="link_button link_button_thin" type="submit" value="Submit">
-			</div>
+			<input type="radio" name="table" value="show" checked> 
+			<p class="bold_text">Add Show</p>
+			
+			<input type="text" name="title" placeholder="Show Title">
+			<input type="number" name="studio_id" placeholder="Studio ID">
+			<input type="number" name="season_id" placeholder="Season ID">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
-
-	</div>
-
-	<br> <br>
-
-	<div class="admin-toolpanel">
+		
+		<br>
 
 		<form action="/create" method="post">
 
-			<input type="radio" name="table" value="show" checked><p>Add Show</p>
-			<label>Show Title: </label> <input type="text" name="title"> <br>
-			<label>Studio ID: </label> <input type="number" name="studio_id"> <br>
-			<label>Season ID: </label> <input type="number" name="season_id"> <br>
+			<input type="radio" name="table" value="studio" checked> 
+			<p class="bold_text">Add Studio</p>
+			
+			<input type="text" name="name" placeholder="Name">
 
-			<div class="admin_submit">
-				<input class="link_button link_button_thin" type="submit" value="Submit">
-			</div>
-
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
 		</form>
-
-		<br> <br> <br> <br> <br>
-
-		<form action="/create" method="post">
-
-			<input type="radio" name="table" value="studio" checked><p>Add Studio</p>
-			<label>Studio Name: </label> <input type="text" name="studio"> <br>
-
-			<div class="admin_submit">
-				<input class="link_button link_button_thin" type="submit" value="Submit">
-			</div>
-
-		</form>
-
-		<br> <br> <br> <br> <br>
+		
+		<br>
 
 		<form action="/create" method="post">
 
-			<input type="radio" name="table" value="season" checked><p>Add Season</p>
-			<label>Season: </label> <input type="text" name="season"> <br>
-			<label>Year: </label> <input type="number" name="year"> <br>
-
-			<div class="admin_submit">
-				<input class="link_button link_button_thin" type="submit" value="Submit">
-			</div>
+			<input type="radio" name="table" value="season" checked> 
+			<p class="bold_text">Add Season</p>
+			
+			<input type="text" name="season" placeholder="Season">
+			<input type="number" name="year" placeholder="Year">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
 

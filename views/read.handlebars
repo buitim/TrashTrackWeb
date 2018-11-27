@@ -1,13 +1,12 @@
 <div class="main read centered_text fades_in">
 
-
 	<div class="browse_options">
 
 		<div class="filter_group">
 
 			<form action="/read" method="get">
 
-				<p class="filter_header">Category</p>
+				<p class="filter_header">Tables</p>
 
 				<input type="radio" id="type_shows" name="type" value="show" checked> <label for="type_shows">Shows</label> <br>
 				<input type="radio" id="type_characters" name="type" value="character"> <label for="type_characters">Characters</label>
@@ -26,14 +25,14 @@
 
 	</div>
 
-	<div class="browse_results">
+	<div class="browse_results read_results">
 
 		<table>
 
 			<tr> {{#each headers}} <th>{{this}}</th> {{/each}} </tr>
 
 			{{#each results}}
-			<tr> {{#each this}} <td>{{this}}</td> {{/each}} </tr>
+				<tr> {{#each this}} <td>{{this}}</td> {{/each}} </tr>
 			{{/each}}
 
 		</table>

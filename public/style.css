@@ -27,9 +27,8 @@
 	text-align: center;
 }
 
-.centered_div {
-	display: flex;
-	justify-content: space-evenly;
+.bold_text {
+	font-weight: bold;
 }
 
 
@@ -192,7 +191,7 @@ th {
 	padding: 0.15em 0.25em;
 	border-radius: 0.25em;
 	margin-left: 0.5em;
-	background: rgba(31, 35, 45, 0.8);
+	background-color: rgba(31, 35, 45, 0.8);
 }
 
 #year {
@@ -240,6 +239,10 @@ input[type=submit] {
 	padding: 2em;
 	border: 0.1em rgba(255, 255, 255, 0.1) solid;
 	border-radius: 1em;
+}
+
+.read_results th {
+	text-transform: lowercase;
 }
 
 
@@ -327,36 +330,41 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* ADMIN TOOLPANEL */
-.admin-toolpanel {
-	margin: auto;
-	width: 50%;
-	padding: 10px;
+.admin_panel {
+	margin: 0 auto;
 }
 
-.admin-toolpanel label {
+.admin_panel form {
 	display: inline-block;
-	float: left;
-	clear: left;
-	width: 250px;
+	margin: 1em;
+}
+
+.admin_panel label {
+	display: block;
 	text-align: right;
-	padding-right: 1em;
 }
 
-.admin-toolpanel input {
-	display: inline-block;
-	float: left;
+.admin_panel input {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.5em;
 }
 
-.admin_submit {
-	display: inline-block;
-	float: left;
-	clear: left;
-	margin-left: 43%;
+.admin_panel input[type="text"], 
+.admin_panel input[type="number"] {
+	padding: 0.5em;
+	border: 0;
+	border-radius: 0.5em;
+	background-color: rgba(31, 35, 45, 0.8);
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: rgb(191, 191, 191);
 }
 
-#admin_submit {
-	display: inline-block;
-	float: left;
-	clear: left;
-	margin-left: 45%;
+.admin_panel input[type="radio"] {
+	display: none;
+}
+
+.admin_panel input::placeholder {
+	font-weight: normal;
+	color: rgb(127, 127, 127);
 }

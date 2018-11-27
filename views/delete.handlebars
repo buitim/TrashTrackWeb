@@ -5,47 +5,52 @@
 
 	<div class="spacing3"></div>
 
-	<div class="admin-toolpanel">
+	<div class="admin_panel">
 
 		<form action="/delete" method="post">
 
-			<label for="show_id">Show ID: </label> <input type="number" name="show">
+			<p class="bold_text">Delete Character</p>
+			<input type="number" name="character" placeholder="Character ID">
 			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
 
-		<br><br>
+		<br>
 
 		<form action="/delete" method="post">
 
-			<label for="char_id">Character ID: </label> <input type="number" name="character">
+			<p class="bold_text">Delete Voice Actor</p>
+			<input type="number" name="voice_actor" placeholder="Voice Actor ID">
 			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
 
-		<br><br>
-
+		<br>
+	
 		<form action="/delete" method="post">
 
-			<label for="voice_id">Voice Actor ID: </label> <input type="number" name="voice_actor">
+			<p class="bold_text">Delete Show</p>
+			<input type="number" name="show" placeholder="Show ID">
 			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
 
-		<br><br>
+		<br>
 
 		<form action="/delete" method="post">
 
-			<label for="studio_id">Studio ID: </label> <input type="number" name="studio">
+			<p class="bold_text">Delete Studio</p>
+			<input type="number" name="studio" placeholder="Studio ID">
 			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>
 
-		<br><br>
+		<br>
 
 		<form action="/delete" method="post">
 
-			<label for="season_id">Season ID: </label> <input type="number" name="season">
+			<p class="bold_text">Delete Season</p>
+			<input type="number" name="season" placeholder="Season ID">
 			<input class="link_button link_button_thin" type="submit" value="Submit">
 
 		</form>

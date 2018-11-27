@@ -1,35 +1,90 @@
-<div class="main browse centered_text fades_in">
-	<h1>Update Show Information</h1>
+<div class="main centered_text fades_in">
+
+	<h1>Update Row In Database</h1>
+	<p>{{message}}</p>
 
 	<div class="spacing3"></div>
 
-	<div class="admin-toolpanel">
+	<div class="admin_panel">
 
-		<form action="/update" method="post">
+		<form action="/create" method="post">
+			
+			<input type="radio" name="table" value="character" checked> 
+			<p class="bold_text">Update Character</p>
+			
+			<input type="number" name="char_id" placeholder="Character ID">
 
-			<label>Show ID: </label> <input type="text" id="show_id" name="update">
-			<br>
-			<br>
+			<input type="text" name="first_name" placeholder="First Name">
+			<input type="text" name="last_name" placeholder="Last Name">
+			<input type="number" name="actor_id" placeholder="Voice Actor ID">
+			<input type="number" name="show_id" placeholder="Show ID"> 
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
 
-			<label>Name: </label> <input type="text" id="show_name" name="update">
-			<br>
+		</form>
+		
+		<br>
 
-			<label>Studio: </label> <input type="text" id="show_studio" name="update">
-			<br>
+		<form action="/create" method="post">
+	
+			<input type="radio" name="table" value="voice_actor" checked> 
+			<p class="bold_text">Update Voice Actor</p>
+			
+			<input type="number" name="actor_id" placeholder="Voice Actor ID">	
 
-			<label>Season: </label> <input type="text" id="show_season" name="update">
-			<br>
+			<input type="text" name="first_name" placeholder="First Name">
+			<input type="text" name="last_name" placeholder="Last Name">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br>
 
-			<label>Year: </label> <input type="text" id="show_year" name="update">
-			<br>
-			<br>
-			<br>
-			<br>
+		<form action="/create" method="post">
 
-			<div class="admin_submit">
-				<input class="link_button" type="submit" value="Submit">
-			</div>
-			<br>
+			<input type="radio" name="table" value="show" checked> 
+			<p class="bold_text">Update Show</p>
+			
+			<input type="number" name="show_id" placeholder="Show ID">
+			
+			<input type="text" name="title" placeholder="Show Title">
+			<input type="number" name="studio_id" placeholder="Studio ID">
+			<input type="number" name="season_id" placeholder="Season ID">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+
+		</form>
+		
+		<br>
+
+		<form action="/create" method="post">
+
+			<input type="radio" name="table" value="studio" checked> 
+			<p class="bold_text">Update Studio</p>
+
+			<input type="number" name="studio_id" placeholder="Studio ID">
+			
+			<input type="text" name="name" placeholder="Name">
+
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br>
+
+		<form action="/create" method="post">
+
+			<input type="radio" name="table" value="season" checked> 
+			<p class="bold_text">Update Season</p>
+			
+			<input type="number" name="season_id" placeholder="Season ID">
+			
+			<input type="text" name="season" placeholder="Season">
+			<input type="number" name="year" placeholder="Year">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+
 		</form>
 
 	</div>
