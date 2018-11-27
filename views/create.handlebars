@@ -9,7 +9,7 @@
 
 		<form action="/create" method="post">
 
-			<p>Add Character</p>
+			<input type="radio" name="table" value="character"  checked><p>Add Character</p>
 			<label>First Name: </label> <input type="text" name="first_name"> <br>
 			<label>Last Name: </label> <input type="text" name="last_name"> <br>
 			<label>Voice Actor ID: </label> <input type="number" name="actor_id"> <br>
@@ -25,7 +25,7 @@
 
 		<form action="/create" method="post">
 
-			<p>Add Voice Actor</p>
+			<input type="radio" name="table" value="voice_actor" checked><p>Add Voice Actor</p>
 			<label>First Name: </label> <input type="text" name="first_name"> <br>
 			<label>Last Name: </label> <input type="text" name="last_name">
 
@@ -45,7 +45,7 @@
 
 		<form action="/create" method="post">
 
-			<p>Add Show</p>
+			<input type="radio" name="table" value="show" checked><p>Add Show</p>
 			<label>Show Title: </label> <input type="text" name="title"> <br>
 			<label>Studio ID: </label> <input type="number" name="studio_id"> <br>
 			<label>Season ID: </label> <input type="number" name="season_id"> <br>
@@ -60,7 +60,7 @@
 
 		<form action="/create" method="post">
 
-			<p>Add Studio</p>
+			<input type="radio" name="table" value="studio" checked><p>Add Studio</p>
 			<label>Studio Name: </label> <input type="text" name="studio"> <br>
 
 			<div class="admin_submit">
@@ -73,7 +73,7 @@
 
 		<form action="/create" method="post">
 
-			<p>Add Season</p>
+			<input type="radio" name="table" value="season" checked><p>Add Season</p>
 			<label>Season: </label> <input type="text" name="season"> <br>
 			<label>Year: </label> <input type="number" name="year"> <br>
 
