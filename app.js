@@ -421,36 +421,53 @@ app.get('/browse*', function (req, res, next) {
 	get_year_range(); // update values just in case they have changed, does not matter when this completes
 
 	var parameters = process_browse_parameters(req.query);
-
 	var query = build_browse_query(parameters); // this should be safe from injection, because of parameter processing 
+	var context;
 
 	console.log(query);
 
 	db.query(query, function (error, result) {
 
 		if (error) {
-			console.log("Error!");
-		} else {
+			console.log(error);
+		} 
+		else {
 
-			console.log("Query done!");
+			console.log("query did not fail");
 
 			var query_results = [],
 				query_headers = [];
 
-			query_headers = underscores_to_spaces(Object.keys(result.rows[0]));
 
-			for (x in result.rows) {
-				query_results.push(Object.values(result.rows[x]));
+			if (result.rowCount > 0) { 
+			
+				query_headers = underscores_to_spaces(Object.keys(result.rows[0]));	
+				
+				for (x in result.rows) {
+					query_results.push(Object.values(result.rows[x]));
+				}	
+
+				var context = {
+					min_year: min_year,
+					max_year: max_year,
+					headers: query_headers,
+					results: query_results
+				};
+
+				res.render('browse', context);
+				
 			}
+			else {
 
-			var context = {
-				min_year: min_year,
-				max_year: max_year,
-				headers: query_headers,
-				results: query_results
-			};
-
-			res.render('browse', context);
+				context = { 
+					min_year: min_year,
+					max_year: max_year,
+					message: 'No data was found. Please try selecting different options.'
+				}
+				
+				res.render('browse', context);
+				
+			}
 
 		}
 
