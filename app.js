@@ -351,10 +351,10 @@ function build_update_query(parameters){
 	console.log(parameters.values[0]);
 
 	
-	// if there is are no parameters besides the table name, make blank query and do not try to update
+	// if there is are no parameters besides the table name and row id, make blank query and do not try to update
 	// if no row was specified for update, make blank query and do not try to update
 	
-	if (parameters.count <= 1 || parameters.columns[1].slice(0, 4) != 'row_') {
+	if (parameters.count <= 2 || parameters.columns[1].slice(0, 4) != 'row_') {
 		
 		query_text = '';
 		query = { text: query_text, values: query_values };
@@ -661,7 +661,7 @@ app.post('/update', function(req,res){
 			console.log("query did not fail");
 			
 			if (result.rowCount > 0) { context = { message: 'The specified row has been updated.' }; }
-			else { context = { message: 'None of the rows in the table have the specified ID.' }; }
+			else { context = { message: 'No rows were affected.' }; }
 			
 			res.render('update', context);
 			
@@ -699,7 +699,7 @@ app.post('/delete', function(req,res){
 			
 			console.log("query did not fail");
 			
-			if (result.rowCount <= 0) { context = { message: 'None of the rows in the table have the specified ID.' }; }
+			if (result.rowCount <= 0) { context = { message: 'No rows were affected.' }; }
 			else if (result.rowCount > 0) { context = { message: 'The specified row has been removed from the table.' }; }
 			
 			res.render('delete', context);
