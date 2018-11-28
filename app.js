@@ -398,6 +398,72 @@ function build_delete_query(parameters) {
 }
 
 
+
+function process_update_parameters(parameters) {
+	
+	var values = Object.values(parameters);
+	var new_values = [];
+	
+	for (x in values) { 
+	
+		if (values[x].trim() === '') { new_values.push( null ); }
+		else { new_values.push( values[x].trim() ); }
+
+	}
+
+	return new_values;
+		
+}
+
+
+
+function build_update_query(parameters){
+
+	var query, query_text, query_values = [];
+
+	// make different insert statement depending on what table is being worked with
+	// parameter 0 is table name, the others are column values
+	
+	switch(parameters[0]) {
+		
+		case 'character':
+			query_text = 'UPDATE public.' + parameters[0] + ' SET first_name = ' + parameters[2] + ', last_name = ' + parameters[3] + ', actor_id = '+ parameters[4] + ', show_id = ' + parameters[5] + ' WHERE char_id = ' + parameters[1];
+			query_values = [ parameters[0], parameters[2], parameters[3], parameters[4],parameters[5],parameters[1] ];
+			break;
+
+		case 'voice_actor':
+			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
+			query_values = [ parameters[1], parameters[2] ];
+			break;
+
+		case 'show':
+			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
+			query_values = [ parameters[1], parameters[2], parameters[3] ];
+			break;
+		case 'studio':
+			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
+			query_values = [ parameters[1] ];
+			break;
+			
+		case 'season':
+			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
+			query_values = [ parameters[1], parameters[2] ];
+			break;
+			
+		default:
+			query_text = '';
+			console.log('something weird happened in /update'); // may be the result of the user editing the front end HTML
+
+	}
+
+	query = { text: query_text, values: query_values };
+
+	return query;
+
+}
+
+
+
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
@@ -563,6 +629,42 @@ app.get('/read', function(req,res){
 app.get('/update', function (req, res) {
 	res.render('update');
 });
+
+
+app.post('/update', function(req,res){
+
+
+	var parameters = process_update_parameters(req.body);
+	var query = build_update_query(parameters);
+
+
+
+	console.log("queryLOL: " + query.text);
+
+	var context;
+
+	console.log(query);
+
+	db.query(query, function (error, result) {
+
+		if (error) {
+			context = { message: capitalize_string(error.message) }
+			res.render('update', context);
+		}
+		else {
+						
+			console.log("query did not fail");
+			
+			context = { message: 'Update Successful!' };
+			
+			res.render('update', context);
+			
+		}
+
+	});
+
+});
+
 
 
 // if page for deletiing rows in the database is requested, find "delete.handlebars" in views and show it to user
