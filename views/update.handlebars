@@ -1,0 +1,97 @@
+<div class="main centered_text fades_in">
+
+	<h1>Update Row In Database</h1>
+	<p>{{message}}</p>
+
+	<div class="spacing3"></div>
+
+	<div class="admin_panel">
+
+		<form action="/update" method="post">
+			
+			<input type="radio" name="table" value="character" checked> 
+			<p class="bold_text">Update Character</p>
+			
+			<input type="number" name="row_char_id" placeholder="Character ID">
+			
+			<input type="number" name="char_id" placeholder="New Character ID">
+			<input type="text" name="first_name" placeholder="New First Name">
+			<input type="text" name="last_name" placeholder="New Last Name">
+			<input type="number" name="actor_id" placeholder="New Voice Actor ID">
+			<input type="number" name="show_id" placeholder="New Show ID"> 
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+
+		</form>
+		
+		<br>
+
+		<form action="/update" method="post">
+	
+			<input type="radio" name="table" value="voice_actor" checked> 
+			<p class="bold_text">Update Voice Actor</p>
+			
+			<input type="number" name="row_actor_id" placeholder="Voice Actor ID">
+			
+			<input type="number" name="actor_id" placeholder="New Voice Actor ID">	
+			<input type="text" name="first_name" placeholder="New First Name">
+			<input type="text" name="last_name" placeholder="New Last Name">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br>
+
+		<form action="/update" method="post">
+
+			<input type="radio" name="table" value="show" checked> 
+			<p class="bold_text">Update Show</p>
+			
+			<input type="number" name="row_show_id" placeholder="Show ID">
+			
+			<input type="number" name="show_id" placeholder="New Show ID">
+			<input type="text" name="title" placeholder="New Show Title">
+			<input type="number" name="studio_id" placeholder="New Studio ID">
+			<input type="number" name="season_id" placeholder="New Season ID">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+
+		</form>
+		
+		<br>
+
+		<form action="/update" method="post">
+
+			<input type="radio" name="table" value="studio" checked> 
+			<p class="bold_text">Update Studio</p>
+
+			<input type="number" name="row_studio_id" placeholder="Studio ID">
+			
+			<input type="number" name="studio_id" placeholder="New Studio ID">
+			<input type="text" name="name" placeholder="New Name">
+
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+			
+		</form>
+		
+		<br>
+
+		<form action="/update" method="post">
+
+			<input type="radio" name="table" value="season" checked> 
+			<p class="bold_text">Update Season</p>
+			
+			<input type="number" name="row_season_id" placeholder="Season ID">
+			
+			<input type="number" name="season_id" placeholder="New Season ID">
+			<input type="text" name="season" placeholder="New Season">
+			<input type="number" name="year" placeholder="New Year">
+			
+			<input class="link_button link_button_thin" type="submit" value="Submit">
+
+		</form>
+
+	</div>
+
+</div>

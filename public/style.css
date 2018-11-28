@@ -1,73 +1,370 @@
-/* font-family: 'Work Sans', sans-serif;
-font-family: 'IBM Plex Sans', sans-serif; */
+.spacing1 {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+.spacing2 {
+	margin: 0;
+	margin-bottom: 2em;
+}
+
+.spacing3 {
+	margin: 0;
+	margin-bottom: 3em;
+}
+
+.spacing4 {
+	margin: 0;
+	margin-bottom: 4em;
+}
+
+.spacing5 {
+	margin: 0;
+	margin-bottom: 5em;
+}
+
+.centered_text {
+	text-align: center;
+}
+
+.bold_text {
+	font-weight: bold;
+}
+
+
+@keyframes fade_in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.fades_in {
+	opacity: 0;
+	animation-name: fade_in;
+	animation-delay: 0.25s;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}
+
 
 body {
 	background-color: #272c38;
 }
 
-h1 {
+a,
+p,
+td,
+h1,
+h2,
+h3,
+label {
+	color: rgb(191, 191, 191);
+	margin: 0;
+}
+
+a {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+p,
+label {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 12pt;
+	margin-bottom: 0.5em;
+}
+
+h1,
+h2,
+h3 {
 	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
-	font-size: 50px;
+	margin-bottom: 0.25em;
+}
+
+h1 {
+	font-size: 32pt;
 }
 
 h2 {
-	font-family: 'Work Sans', sans-serif;
-	font-size: 20px;
+	font-size: 28pt;
 }
+
+h3 {
+	font-size: 24pt;
+}
+
+
+/* for debugging database queries */
+
+table {
+	display: inline-block;
+}
+
+th,
+td {
+	padding: 0.5em;
+	border: 0.1em rgba(255, 255, 255, 0.1) solid;
+	border-radius: 0.25em;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 12pt;
+}
+
+th {
+	color: #02aaff;
+	background-color: rgba(0, 0, 0, 0.1);
+	text-transform: capitalize;
+}
+
+
+/* for debugging database queries */
+
+
+#site_banner {
+	display: inline-block;
+	margin: 0 auto;
+	-webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.69));
+	filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.69));
+}
+
+
+.main {
+	box-sizing: border-box;
+	display: block;
+	width: 75%;
+	min-width: 900px;
+	position: relative;
+	margin: 0 auto;
+	padding: 5em 2em;
+}
+
+
+.browse {
+	padding: 5em;
+}
+
+.browse_options {
+	display: inline-block;
+	width: 19.5%;
+	float: left;
+	text-align: left;
+}
+
+.browse_options .link_button {
+	margin: 0;
+}
+
+/* Start of left module styling */
+
+.filter_group {
+	display: inline-block;
+	color: rgb(133, 150, 165);
+	font-size: 1.4rem;
+	margin-bottom: 0.5em;
+	width: 75%;
+}
+
+.filter_header {
+	border-bottom: 0.1em solid #02aaff;
+	padding-bottom: 0.5em;
+	font-weight: bolder;
+}
+
+.filter_group label {
+	cursor: pointer;
+	display: inline-block;
+	width: 85%;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	margin-left: 0.5em;
+}
+
+.year_group {
+	cursor: pointer;
+	display: inline-block;
+	width: 85%;
+	padding: 0.15em 0.25em;
+	border-radius: 0.25em;
+	margin-left: 0.5em;
+	background-color: rgba(31, 35, 45, 0.8);
+}
+
+#year {
+	width: 100%;
+	font-size: 12pt;
+	color: rgb(159, 173, 189);
+	font-weight: bold;
+	background-color: transparent;
+	border: 0;
+	margin-left: 0.1em;
+}
+
+#year::placeholder {
+	font-weight: normal;
+	color: rgba(127, 127, 127, 0.5);
+}
+
+input {
+	cursor: pointer;
+}
+
+input[type=radio]:checked+label {
+	color: rgb(159, 173, 189);
+	font-weight: bold;
+	background: rgba(31, 35, 45, 0.8);
+}
+
+input[type=radio] {
+	visibility: hidden;
+	width: 100%;
+	display: none;
+}
+
+input[type=submit] {
+	background: transparent;
+}
+
+/* End of left module style */
+
+
+.browse_results {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 79.5%;
+	padding: 2em;
+	border: 0.1em rgba(255, 255, 255, 0.1) solid;
+	border-radius: 1em;
+}
+
+.read_results th {
+	text-transform: lowercase;
+}
+
 
 .nav {
-
-	top: 10px;
-	right: 50px;
-	position: absolute;
-
+	height: 5em;
+	border-bottom: 1px rgba(255, 255, 255, 0.25) solid;
+	padding: 0;
 }
 
-p {
-	font-family: 'IBM Plex Sans', sans-serif;
-}
-
-#home {
-	font-size: 30px;
-	color: #E4AD59;
-
-}
-
-#search {
-
-	position: absolute;
-	display: block;
-	width: 126px;
-	height: 180px;
-	background-color: #F7E96D;
-
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-}
-
-#text {
+.nav_element {
 	display: inline-block;
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+	text-decoration: none;
+	margin: 0;
+	margin-bottom: 0.5em;
 }
 
-#browse {
-	text-align: center;
-	position: relative;
-	top: 40px;
-	left: 10px;
-	font-family: 'IBM Plex Sans', sans-serif;
-	color: #0B0B0B;
+.nav_element:hover {
+	color: #02aaff;
+}
 
+.nav_left {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin-left: 2em;
+}
+
+
+.nav_right {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 2em;
+}
+
+.nav_link {
+	margin-left: 2em;
+}
+
+
+.logo_text {
+	display: inline;
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+	font-size: 20pt;
+}
+
+.logo_left {
+	color: white;
+}
+
+.logo_right {
+	color: #02aaff;
+}
+
+.link_button {
+	display: inline-block;
+	border: 0.125em white solid;
+	border-radius: 1em;
+	margin: 0 0.5em;
+	padding: 1em 2em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 12pt;
+	color: white;
+}
+
+.link_button:hover {
+	background-color: #02aaff;
+	border: 0.125em #02aaff solid;
+	cursor: pointer;
+}
+
+.link_button_thin {
+	border-radius: 0.5em;
+	padding: 0.25em 1em;
+	font-size: 10pt;
+}
+
+/* Disables spinner on number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* ADMIN TOOLPANEL */
+.admin_panel {
+	margin: 0 auto;
+}
+
+.admin_panel form {
+	display: inline-block;
+	margin: 1em;
+}
+
+.admin_panel label {
+	display: block;
+	text-align: right;
+}
+
+.admin_panel input {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.5em;
+}
+
+.admin_panel input[type="text"], 
+.admin_panel input[type="number"] {
+	padding: 0.5em;
+	border: 0;
+	border-radius: 0.5em;
+	background-color: rgba(31, 35, 45, 0.8);
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: rgb(191, 191, 191);
+}
+
+.admin_panel input[type="radio"] {
+	display: none;
+}
+
+.admin_panel input::placeholder {
+	font-weight: normal;
+	color: rgb(127, 127, 127);
 }
