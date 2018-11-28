@@ -319,6 +319,82 @@ function build_read_query(parameters) {
 }
 
 
+// checks input from POST request form and returns object containing parameters for update operation on database
+function process_update_parameters(parameters) {
+	
+	var values = Object.values(parameters);
+	var names = Object.keys(parameters);
+	var counter = 0;
+	var new_values = [];
+	var column_names = [];
+	
+	for (x in values) { 
+
+		if (values[x].trim() != ''){
+			new_values.push( values[x].trim() );
+			column_names.push( names[x].trim() );
+			counter = counter + 1;
+		}
+		
+	}
+
+	return {columns: column_names, values: new_values, count: counter};
+		
+}
+
+// constructs update statement for database using object containing array of column names and array of values
+function build_update_query(parameters){
+
+	var query, query_text, query_values = [], query_parts='', query_where = ' WHERE ';
+
+	console.log(parameters.count);
+	console.log(parameters.values[0]);
+
+	
+	// if there is are no parameters besides the table name, make blank query and do not try to update
+	// if no row was specified for update, make blank query and do not try to update
+	
+	if (parameters.count <= 1 || parameters.columns[1].slice(0, 4) != 'row_') {
+		
+		query_text = '';
+		query = { text: query_text, values: query_values };
+		return query;
+		
+	} 
+	
+
+	query_text = 'UPDATE public.' + parameters.values[0] + ' SET ';
+	
+	var i = 0, x = 0;
+	
+	for(x = 2; x < parameters.count; x++){
+		
+		i = i + 1;
+		
+		query_parts = query_parts + parameters.columns[x] + ' = $' + i;
+
+		if (x != parameters.count-1)
+			query_parts = query_parts + ', ';
+
+		query_values.push( parameters.values[x] );
+
+	}
+	
+	i = i + 1;
+	
+	query_parts = query_parts + query_where + parameters.columns[1].slice(4) + '=' + ' $' + i;
+	query_text = query_text + query_parts + ';';
+	query_values.push(parameters.values[1]);
+
+	console.log('text: ' + query_text);
+	
+	query = { text: query_text, values: query_values };
+
+	return query;
+
+}
+
+
 // checks input from POST request form and returns array of valid parameters for delete operation on database
 function process_delete_parameters(parameters) {
 
@@ -396,70 +472,6 @@ function build_delete_query(parameters) {
 	return query_text;
 	
 }
-
-
-
-function process_update_parameters(parameters) {
-	
-	var values = Object.values(parameters);
-	var names = Object.keys(parameters);
-	var counter = 0;
-	var new_values = [];
-	var column_names = [];
-	
-	for (x in values) { 
-	
-		// if (values[x].trim() === '') { new_values.push( null ); }
-		// else { new_values.push( values[x].trim() ); }
-
-
-		if (values[x].trim() != ''){
-			new_values.push( values[x].trim() );
-			column_names.push( names[x].trim() );
-			counter += 1;
-		}
-	}
-
-	return {columns: column_names, values: new_values, counting: counter};
-		
-}
-
-
-
-function build_update_query(parameters){
-
-	var query, query_text, query_values = [], query_parts='', query_where = ' WHERE ';
-
-
-		console.log(parameters.counting);
-		console.log(parameters.values[0]);
-
-	query_text = 'UPDATE public.' + parameters.values[0] + ' SET ';
-	var i=0,x;
-	for(x=2; x< parameters.counting; x++){
-		i +=1;
-		query_parts = query_parts + parameters.columns[x] + ' = $' + i;
-		// query_parts = query_parts + "$" + x; 
-
-		if (x != parameters.counting-1)
-			query_parts = query_parts + ', ';
-
-		query_values.push(parameters.values[x]);
-
-	}
-	i+=1;
-	query_parts = query_parts + query_where + parameters.columns[1] + '=' + ' $' + i;
-	query_text = query_text + query_parts + ';';
-	query_values.push(parameters.values[1]);
-
-
-	console.log('text: ' + query_text);
-	query = { text: query_text, values: query_values };
-
-	return query;
-
-}
-
 
 
 // set the port of our application
@@ -631,18 +643,13 @@ app.get('/update', function (req, res) {
 
 app.post('/update', function(req,res){
 
-
 	var parameters = process_update_parameters(req.body);
 	var query = build_update_query(parameters);
 
-
-
-	console.log("queryLOL: " + query.text);
+	console.log("query: " + query.text);
 
 	var context;
-
-	// console.log();
-
+	
 	db.query(query, function (error, result) {
 
 		if (error) {
@@ -653,7 +660,8 @@ app.post('/update', function(req,res){
 						
 			console.log("query did not fail");
 			
-			context = { message: 'Update Successful!' };
+			if (result.rowCount > 0) { context = { message: 'The specified row has been updated.' }; }
+			else { context = { message: 'None of the rows in the table have the specified ID.' }; }
 			
 			res.render('update', context);
 			
