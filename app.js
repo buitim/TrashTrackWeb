@@ -427,8 +427,8 @@ function build_update_query(parameters){
 	switch(parameters[0]) {
 		
 		case 'character':
-			query_text = 'UPDATE public.' + parameters[0] + ' SET first_name = ' + parameters[2] + ', last_name = ' + parameters[3] + ', actor_id = '+ parameters[4] + ', show_id = ' + parameters[5] + ' WHERE char_id = ' + parameters[1];
-			query_values = [ parameters[0], parameters[2], parameters[3], parameters[4],parameters[5],parameters[1] ];
+			query_text = 'UPDATE public.' + parameters[0] + ' SET first_name = $1, last_name = $2, actor_id = $3, show_id = $4 WHERE char_id = $5';
+			query_values = [parameters[2], parameters[3], parameters[4],parameters[5],parameters[1] ];
 			break;
 
 		case 'voice_actor':
@@ -643,7 +643,7 @@ app.post('/update', function(req,res){
 
 	var context;
 
-	console.log(query);
+	// console.log();
 
 	db.query(query, function (error, result) {
 
