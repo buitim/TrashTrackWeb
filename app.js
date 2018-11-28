@@ -402,16 +402,25 @@ function build_delete_query(parameters) {
 function process_update_parameters(parameters) {
 	
 	var values = Object.values(parameters);
+	var names = Object.keys(parameters);
+	var counter = 0;
 	var new_values = [];
+	var column_names = [];
 	
 	for (x in values) { 
 	
-		if (values[x].trim() === '') { new_values.push( null ); }
-		else { new_values.push( values[x].trim() ); }
+		// if (values[x].trim() === '') { new_values.push( null ); }
+		// else { new_values.push( values[x].trim() ); }
 
+
+		if (values[x].trim() != ''){
+			new_values.push( values[x].trim() );
+			column_names.push( names[x].trim() );
+			counter += 1;
+		}
 	}
 
-	return new_values;
+	return {columns: column_names, values: new_values, counting: counter};
 		
 }
 
@@ -419,43 +428,32 @@ function process_update_parameters(parameters) {
 
 function build_update_query(parameters){
 
-	var query, query_text, query_values = [];
+	var query, query_text, query_values = [], query_parts='', query_where = ' WHERE ';
 
-	// make different insert statement depending on what table is being worked with
-	// parameter 0 is table name, the others are column values
-	
-	switch(parameters[0]) {
-		
-		case 'character':
-			query_text = 'UPDATE public.' + parameters[0] + ' SET first_name = $1, last_name = $2, actor_id = $3, show_id = $4 WHERE char_id = $5';
-			query_values = [parameters[2], parameters[3], parameters[4],parameters[5],parameters[1] ];
-			break;
 
-		case 'voice_actor':
-			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
-			query_values = [ parameters[1], parameters[2] ];
-			break;
+		console.log(parameters.counting);
+		console.log(parameters.values[0]);
 
-		case 'show':
-			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
-			query_values = [ parameters[1], parameters[2], parameters[3] ];
-			break;
-		case 'studio':
-			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
-			query_values = [ parameters[1] ];
-			break;
-			
-		case 'season':
-			query_text = 'UPDATE public.' + parameters[0] + ' SET ';
-			query_values = [ parameters[1], parameters[2] ];
-			break;
-			
-		default:
-			query_text = '';
-			console.log('something weird happened in /update'); // may be the result of the user editing the front end HTML
+	query_text = 'UPDATE public.' + parameters.values[0] + ' SET ';
+	var i=0,x;
+	for(x=2; x< parameters.counting; x++){
+		i +=1;
+		query_parts = query_parts + parameters.columns[x] + ' = $' + i;
+		// query_parts = query_parts + "$" + x; 
+
+		if (x != parameters.counting-1)
+			query_parts = query_parts + ', ';
+
+		query_values.push(parameters.values[x]);
 
 	}
+	i+=1;
+	query_parts = query_parts + query_where + parameters.columns[1] + '=' + ' $' + i;
+	query_text = query_text + query_parts + ';';
+	query_values.push(parameters.values[1]);
 
+
+	console.log('text: ' + query_text);
 	query = { text: query_text, values: query_values };
 
 	return query;
