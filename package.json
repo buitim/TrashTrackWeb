@@ -20,7 +20,7 @@
 	"homepage": "https://github.com/buitim/TrashTrackWeb#readme",
 	"dependencies": {
 		"express": "^4.16.4",
-		"express-handlebars": "^3.0.0",
+		"express-handlebars": "^5.3.1",
 		"handlebars": "^4.3.0",
 		"pg": "^7.6.1",
 		"pug": "^2.0.3"
