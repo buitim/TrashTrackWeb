@@ -19,7 +19,7 @@
 	},
 	"homepage": "https://github.com/buitim/TrashTrackWeb#readme",
 	"dependencies": {
-		"express": "^4.16.4",
+		"express": "^4.17.3",
 		"express-handlebars": "^3.0.0",
 		"handlebars": "^4.3.0",
 		"pg": "^7.6.1",
